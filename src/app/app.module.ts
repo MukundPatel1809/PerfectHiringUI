@@ -17,6 +17,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
