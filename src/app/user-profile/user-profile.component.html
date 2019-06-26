@@ -1,40 +1,46 @@
 <div class="main-content">
   <div class="container-fluid">
       <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-10">
               <div class="card">
                   <div class="card-header card-header-danger">
-                      <h4 class="card-title">Edit Profile</h4>
-                      <p class="card-category">Complete your profile</p>
+                      <h4 class="card-title">Add Profile</h4>
+                      <p class="card-category">Please insert correct details</p>
                   </div>
                   <div class="card-body">
                       <form>
                           <div class="row">
                               <div class="col-md-5">
-                                <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Company (disabled)" disabled>
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Name">
                                   </mat-form-field>
                               </div>
                               <div class="col-md-3">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Username">
+                                    <input matInput placeholder="Email address" type="email">
                                   </mat-form-field>
                               </div>
-                              <div class="col-md-4">
+                              <div class="col-md-3">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Email address" type="email">
+                                    <input matInput placeholder="Phone number" type="phoneNumber">
                                   </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Fist Name" type="text">
+                                    <mat-label>Gender</mat-label>
+                                    <select matNativeControl required>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                      </select>
                                 </mat-form-field>
                               </div>
-                              <div class="col-md-6">
+                              <div class="col-md-3">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Last Name" type="text">
+                                    <mat-label>DOB</mat-label>
+                                  <input matInput placeholder="yyyy/mm/dd" type="text">
                                 </mat-form-field>
                               </div>
                           </div>
@@ -68,38 +74,16 @@
                                 <mat-form-field class="example-full-width">
                                    <textarea matInput placeholder="Description"></textarea>
                                  </mat-form-field>
-                                  <!-- <div class="form-group">
-
-                                      <div class="form-group">
-                                          <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                          <textarea class="form-control" rows="5"></textarea>
-                                      </div>
-                                  </div> -->
                               </div>
                           </div>
-                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
+
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Add Profile</button>
                           <div class="clearfix"></div>
                       </form>
                   </div>
               </div>
           </div>
-          <div class="col-md-4">
-              <div class="card card-profile">
-                  <div class="card-avatar">
-                      <a href="javascript:void(0)">
-                          <img class="img" src="" />
-                      </a>
-                  </div>
-                  <div class="card-body">
-                      <h6 class="card-category text-gray">SSE - 2</h6>
-                      <h4 class="card-title">Darth Vader</h4>
-                      <p class="card-description">
-                          Description
-                      </p>
-                      <a href="javascript:void(0)" class="btn btn-danger btn-round">Download Resume</a>
-                  </div>
-              </div>
-          </div>
+          
       </div>
   </div>
 </div>

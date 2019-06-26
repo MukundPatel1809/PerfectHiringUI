@@ -1,0 +1,43 @@
+{
+  "candidates": [
+    {
+        "name": "Aleix Vidal",
+        "age": 26,
+        "maritualStatus": "Single",
+        "distanceFromWorkplace": 34,
+        "skillSets":["JAVA","HIBERNATE","SPRING"],
+        "previousOrganisation":["TCS","INFY","HCL"],
+        "expectedSalary": 12,
+        "predictedSalary": 14,
+        "joiningPrediction": 87,
+        "offeredSalary": 12,
+        "profileMatching": 87
+    },
+    {
+      "name": "Bruno Alves",
+      "age": 32,
+      "maritualStatus": "Married",
+      "distanceFromWorkplace": 3,
+      "skillSets":["JAVA","HTTP","HTML"],
+      "previousOrganisation":["GOOGLE"],
+      "expectedSalary": 14,
+      "predictedSalary": 11,
+      "joiningPrediction": 88,
+      "offeredSalary": 12,
+      "profileMatching": 606
+  },
+  {
+    "name": "Paul Pogba",
+    "age": 21,
+    "maritualStatus": "Single",
+    "distanceFromWorkplace": 30,
+    "skillSets":["HIBERNATE","SPRING"],
+    "previousOrganisation":["Microsoft"],
+    "expectedSalary": 87,
+    "predictedSalary": 99,
+    "joiningPrediction": 91,
+    "offeredSalary": 89,
+    "profileMatching": 97
+  }
+  ]
+}
