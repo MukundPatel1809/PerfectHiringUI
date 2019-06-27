@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.log('candides updated'+this.candidateService.candidates);
         this.candidateService.getJOBS().subscribe(data => {
             console.log(data);
             this.jobs = data.jobs;
@@ -64,7 +65,7 @@ export class DashboardComponent implements OnInit {
         console.log(candidates);
         this.totalCandidates = candidates.length;
         candidates.forEach(candidate => {
-            if (candidate.Attrition === 'Yes') {
+            if (candidate.Joining === 'Yes') {
                 this.totalGreenStatus += 1;
             }
             this.budgetExhausted += this.candidateService.getSalary(candidate);
@@ -97,7 +98,7 @@ export class DashboardComponent implements OnInit {
             labels.push(job.division);
             let candidateCount = 0;
             this.candidateService.candidates.forEach(candidate => {
-                if (candidate.jobId == job.id && candidate.Attrition == 'Yes') {
+                if (candidate.jobId == job.id && candidate.Joining == 'Yes') {
                     candidateCount++;
                 }
             });
@@ -121,7 +122,7 @@ export class DashboardComponent implements OnInit {
             labels.push(job.division);
             let budgetExhausted = 0;
             this.candidateService.candidates.forEach(candidate => {
-                if (candidate.jobId == job.id && candidate.Attrition == 'Yes') {
+                if (candidate.jobId == job.id && candidate.Joining == 'Yes') {
                     budgetExhausted = budgetExhausted + this.candidateService.getSalary(candidate);
                 }
             });
