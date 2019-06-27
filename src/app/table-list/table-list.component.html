@@ -19,14 +19,15 @@
                                       Name
                                   </th>
                                   <th>
+                                    Salary Hike (%)
+                                </th>
+                                  <th>
                                       Expected Salary 
                                   </th>
                                   <th>
                                       Profile Matching (%)
                                   </th>
-                                  <th>
-                                      Salary Hike (%)
-                                  </th>
+
                                   <th>
                                       Will Join? 
                                   </th>
@@ -39,11 +40,9 @@
                                           {{candidate.jobId}}
                                       </td>
                                       <td>
-                                          {{candidate.Name}}
+                                          {{candidate.name}}
                                       </td>
-                                      <td>
-                                            {{candidate.CurrentSalary}}
-                                       </td>
+
                                       <td (click)="editValue(i)">
                                           <span *ngIf="candidate.isEditClicked">
                                                 <input #myval type="text" (blur)="submitNewValue(i,myval.value)"/>
@@ -52,10 +51,15 @@
                                             {{candidate.PercentSalaryHike}}
                                           </span>
                                       </td>
-
+                                      <td>
+                                        {{candidate.CurrentSalary}}
+                                      </td>
                                       <td>
                                           {{candidate.ProfileMatching}}
                                       </td>
+                                      <td>
+                                        {{candidate.willCandidateJoin}}
+                                    </td>
                                   </tr>
                                   
                               </tbody>
@@ -67,7 +71,6 @@
           </div>
 
            <div class="col-md-12">  
-                
                       
           </div> 
       </div>

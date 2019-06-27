@@ -19,15 +19,14 @@ export class TableListComponent implements OnInit {
   constructor(public candidateService: CandidateService) {
   
   }
-
   
   ngOnInit() {
     this.candidateService.getJSON().subscribe(data => {
          this.candidates = data.candidates;
      });
      this.candidateService.getJOBS().subscribe(data => {
-      this.jobs = data.jobs;
-  });  
+       this.jobs = data.jobs;
+    });  
   }
 
   editValue(rowNumber: string) {
@@ -49,8 +48,12 @@ export class TableListComponent implements OnInit {
   updateCandidate = (rowNumber) => {
     let candidate = this.candidates[rowNumber];
     let candidateJSON = this.candidateService.getAPIJSON(candidate);
-    let val = this.candidateService.updateCandidate(candidateJSON);
-    candidate[rowNumber].willCandidateJoin=val;
+    let val = this.candidateService.updateCandidate(candidateJSON).subscribe(data => {
+      this.candidates[rowNumber].willCandidateJoin = data.result == 1 ? "Yes":"No";
+    }, data =>{
+        alert("Web service call failed!")
+    });
+    
     this.candidates[rowNumber]["joiningPrediction"] = val;
   }
 }

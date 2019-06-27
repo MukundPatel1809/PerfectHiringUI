@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Candidate} from './candidate';
 
@@ -38,14 +38,13 @@ export class CandidateService {
     }
 
     public getSalary(candidate: Candidate) {
-       // const salary:any =  candidate.CurrentSalary + parseInt((candidate.PercentSalaryHike / 100).toFixed()) * candidate.CurrentSalary;
+   //    const salary:any =  candidate.CurrentSalary + parseInt((candidate.PercentSalaryHike / 100).toFixed()) * candidate.CurrentSalary;
         //console.log('salary'+salary);
         return 0;
     }
 
     public updateCandidate(candidate: any): Observable<any> {
-        return  this.http.post("/update-candidate", candidate);
-  
+        return  this.http.post("http://a302-0134-5920.stm.swissbank.com:5000/", candidate);
     }
 
     public getAPIJSON(candidate: Candidate): any {
