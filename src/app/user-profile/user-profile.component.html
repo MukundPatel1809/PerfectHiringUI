@@ -3,26 +3,32 @@
       <div class="row">
           <div class="col-md-10">
               <div class="card">
+                
                   <div class="card-header card-header-danger">
                       <h4 class="card-title">Add Profile</h4>
                       <p class="card-category">Please insert correct details</p>
                   </div>
                   <div class="card-body">
-                      <form>
+                      <form autocomplete="on" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                          
                           <div class="row">
                               <div class="col-md-5">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Name">
+                                    <input matInput formControlName="Name" placeholder="Name">
                                   </mat-form-field>
                               </div>
                               <div class="col-md-3">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Email address" type="email">
+                                    <input matInput placeholder="department" formControlName="Department" type="email">
                                   </mat-form-field>
                               </div>
                               <div class="col-md-3">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Phone number" type="phoneNumber">
+                                      <mat-label>Attritus</mat-label>
+                                      <select matNativeControl formControlName="Attritus">
+                                          <option value="Yes">Yes</option>
+                                          <option value="No">No</option>
+                                        </select>
                                   </mat-form-field>
                               </div>
                           </div>
@@ -30,7 +36,7 @@
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Gender</mat-label>
-                                    <select matNativeControl required>
+                                    <select matNativeControl required formControlName="Gender">
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                         <option value="other">Other</option>
@@ -39,51 +45,94 @@
                               </div>
                               <div class="col-md-3">
                                 <mat-form-field class="example-full-width">
-                                    <mat-label>DOB</mat-label>
-                                  <input matInput placeholder="yyyy/mm/dd" type="text">
+                                    <mat-label>Age</mat-label>
+                                  <input matInput formControlName="Age" placeholder="age" type="text">
                                 </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
-                              <div class="col-md-12">
+                              <div class="col-md-3">
+                                  <mat-label>Distance From Home</mat-label>
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Adress" type="text">
+                                  <input matInput formControlName="DistanceFromHome" placeholder="distanceFromHome" type="text">
                                 </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                      <mat-label>Marital Status</mat-label>
+                                      <select matNativeControl required formControlName="MaritalStatus">
+                                          <option value="single">Single</option>
+                                          <option value="married">Married</option>
+                                        </select>
+                                  </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="City" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Country" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Postal Code" type="text">
-                                </mat-form-field>
-                              </div>
+                              <div class="col-md-3">
+                                  <mat-form-field class="example-full-width">
+                                      <mat-label>Percentage Hike Offered</mat-label>
+                                    <input matInput formControlName="PercentSalaryHike" placeholder="Percentage Hike Offered" type="text">
+                                  </mat-form-field>
+                               </div>
+                               <div class="col-md-3">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput formControlName="CurrentSalary" placeholder="CurrentSalary" type="text">
+                                  </mat-form-field>
+                               </div>
                           </div>
+                        
                           <div class="row">
-                              <div class="col-md-12">
-                                <label>About Me</label>
-                                <mat-form-field class="example-full-width">
-                                   <textarea matInput placeholder="Description"></textarea>
-                                 </mat-form-field>
-                              </div>
-                          </div>
-
-                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Add Profile</button>
+                            
+    <div class="col-md-3">
+        <mat-form-field class="example-full-width">
+            <mat-label>Job Level</mat-label>
+            <select matNativeControl required formControlName="JobLevel">
+                <option value="EE">EE</option>
+                <option value="AO">AO</option>
+                <option value="AD">AD</option>
+                <option value="DI">DI</option>
+                <option value="ED">ED</option>
+              </select>
+        </mat-form-field>
+   </div>
+   <div class="col-md-3">
+      <mat-form-field class="example-full-width">
+          <mat-label>Total Experience</mat-label>
+        <input matInput formControlName="TotalWorkingYears" placeholder="Comma Separated Skills" type="text">
+      </mat-form-field>
+   </div>
+           </div>
+           <div class="row">
+              <div class="col-md-9">
+                  <mat-form-field class="example-full-width">
+                      <mat-label>Skill Sets</mat-label>
+                     <input matInput formControlName="skillSets" placeholder="Comma Separated Skills" type="text">
+                  </mat-form-field>
+                </div>
+          </div>
+                         <button mat-raised-button type="submit" class="btn btn-danger pull-right">Add Profile</button>
                           <div class="clearfix"></div>
                       </form>
-                  </div>
-              </div>
-          </div>
-          
-      </div>
+                 </div>
+               </div>
+           </div>
+        </div>
   </div>
 </div>
+
+<!-- 
+<div class="row">
+    <div class="col-md-3">
+        
+      </div>
+      
+</div>
+
+<div class="row">
+    <div class="col-md-9">
+        <mat-form-field class="example-full-width">
+            <mat-label>Skill Sets</mat-label>
+          <textarea matInput formControlName="skillSets" placeholder="Comma Separated Skills" type="text">
+        </mat-form-field>
+      </div>
+</div> -->

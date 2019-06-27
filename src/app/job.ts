@@ -5,6 +5,7 @@ export class Job {
                 public totalSeats: number,
                 public division: string,
                 public salaryRange: number[],
-                public post: number) {
+                public post: number,
+                public skillsRequired: String[]) {
     }
 }

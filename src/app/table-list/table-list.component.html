@@ -7,53 +7,69 @@
                     <h4 class="card-title mt-0"> Candidate List</h4>
                     <p class="card-category"> List of candidates and their stats!</p>
                 </div>
-                  <div class="card-body">
+                   <div class="card-body">
                       <div class="table-responsive">
-                          <table class="table">
-                              <thead class=" text-primary">
+                           <table class="table" matSort (matSortChange)="sortData($event)">
+                              <tr class=" text-primary">
+                                  
                                   <th>
-                                      ID
+                                      Job ID
                                   </th>
                                   <th>
                                       Name
                                   </th>
                                   <th>
-                                      Country
+                                      Expected Salary 
                                   </th>
                                   <th>
-                                      City
+                                      Profile Matching (%)
                                   </th>
                                   <th>
-                                      Salary
+                                      Salary Hike (%)
                                   </th>
-                              </thead>
+                                  <th>
+                                      Will Join? 
+                                  </th>
+
+                              </tr>
                               <tbody>
-                                  <tr *ngFor="let candidate of candidates">
+                                  <tr *ngFor="let candidate of candidates; let i = index">
+
                                       <td>
-                                          {{candidate.name}}
+                                          {{candidate.jobId}}
                                       </td>
                                       <td>
-                                            {{candidate.age}}
+                                          {{candidate.Name}}
                                       </td>
                                       <td>
-                                            {{candidate.offeredSalary}}
+                                            {{candidate.CurrentSalary}}
+                                       </td>
+                                      <td (click)="editValue(i)">
+                                          <span *ngIf="candidate.isEditClicked">
+                                                <input #myval type="text" (blur)="submitNewValue(i,myval.value)"/>
+                                          </span>
+                                          <span *ngIf="!candidate.isEditClicked">
+                                            {{candidate.PercentSalaryHike}}
+                                          </span>
                                       </td>
+
                                       <td>
-                                           {{candidate.predictedSalary}}
-                                      </td>
-                                      <td class="text-primary">
-                                          {{candidate.joiningPrediction}}
+                                          {{candidate.ProfileMatching}}
                                       </td>
                                   </tr>
                                   
                               </tbody>
                           </table>
+                         
                       </div>
-                  </div>
+                  </div> 
               </div>
           </div>
-          <div class="col-md-12">
-          </div>
+
+           <div class="col-md-12">  
+                
+                      
+          </div> 
       </div>
   </div>
 </div>

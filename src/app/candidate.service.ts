@@ -8,6 +8,23 @@ import {Candidate} from './candidate';
 })
 export class CandidateService {
 
+
+    public url: String = "";
+
+    public CandidateObj = {
+        Age:0,
+        Department:0,
+        DistanceFromHome:"",
+        Gender:"",
+        JobLevel:"",
+        MaritalStatus:"",
+        NumCompaniesWorked:0,
+        PercentSalaryHike:0,
+        TotalWorkingYears:0,
+        YearsAtCompany:0
+    };
+
+
     constructor(private http: HttpClient) {
 
     }
@@ -21,9 +38,31 @@ export class CandidateService {
     }
 
     public getSalary(candidate: Candidate) {
-        const salary:any =  candidate.CurrentSalary + parseInt((candidate.PercentSalaryHike / 100).toFixed()) * candidate.CurrentSalary;
+       // const salary:any =  candidate.CurrentSalary + parseInt((candidate.PercentSalaryHike / 100).toFixed()) * candidate.CurrentSalary;
         //console.log('salary'+salary);
-        return salary;
+        return 0;
     }
+
+    public updateCandidate(candidate: any): Observable<any> {
+        return  this.http.post("/update-candidate", candidate);
+  
+    }
+
+    public getAPIJSON(candidate: Candidate): any {
+        let candidateJSON = {
+            Age:candidate.Age,
+            Department:candidate.Department,
+            DistanceFromHome:candidate.DistanceFromHome,
+            Gender:candidate.Gender,
+            JobLevel:candidate.JobLevel,
+            MaritalStatus:candidate.MaritalStatus,
+            NumCompaniesWorked:candidate.NumCompaniesWorked,
+            PercentSalaryHike:candidate.PercentSalaryHike,
+            TotalWorkingYears:candidate.TotalWorkingYears,
+            YearsAtCompany:candidate.YearsAtCompany
+        };
+        return candidateJSON;
+    }
+
 
 }

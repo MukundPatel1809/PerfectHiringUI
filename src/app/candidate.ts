@@ -9,12 +9,13 @@ export class Candidate {
                 public JobLevel: String,
                 public MaritalStatus: String,
                 public NumCompaniesWorked: number,
-                public PercentSalaryHike: number,
+                public PercentSalaryHike: Number,
                 public TotalWorkingYears: number,
                 public YearsAtCompany: number,
                 public CurrentSalary: number,
                 public ProfileMatching: number,
-                public jobId: String
+                public jobId: String,
+                public willCandidateJoin?: String
                 ) {
 
     }
