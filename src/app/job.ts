@@ -1,10 +1,10 @@
 export class Job {
 
     constructor(public id: String,
-                totalBudget: number,
-                totalSeats: number,
-                division: string,
-                salaryRange: number[],
-                post: number) {
+                public totalBudget: number,
+                public totalSeats: number,
+                public division: string,
+                public salaryRange: number[],
+                public post: number) {
     }
 }

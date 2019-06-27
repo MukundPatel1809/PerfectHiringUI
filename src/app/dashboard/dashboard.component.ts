@@ -160,7 +160,7 @@ export class DashboardComponent implements OnInit {
 
     }
 
-    private drawBar(id: string, labels:[], series: [[]], low:number, high:number){
+    private drawBar(id: string, labels:string[], series:any[], low:any, high:any){
         const chart: any = {
             labels: labels,
             series: series
