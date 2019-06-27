@@ -60,9 +60,9 @@ export class CandidateService {
         return this.http.get('./assets/jobs.json');
     }
 
-    public getSalary(candidate: Candidate) {
+    public getSalary(candidate: Candidate): number {
 
-        let salary = candidate.CurrentSalary + candidate.PercentSalaryHike * candidate.CurrentSalary * 0.01;
+        let salary = (candidate.CurrentSalary + candidate.PercentSalaryHike * candidate.CurrentSalary * 0.01);
         //console.log(`current: ${candidate.CurrentSalary} hike: ${candidate.PercentSalaryHike} salary: ${salary}`);
         return salary;
 

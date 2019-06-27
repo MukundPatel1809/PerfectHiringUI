@@ -4,7 +4,7 @@
       "id":"43552435",
       "salaryRange":[8,15],
       "totalBudget":90,
-      "totalSeats":6,
+      "totalSeats":9,
       "division":"IB-GED",
       "post":"EE",
       "skillsRequired": ["Java", "Spring-MVC", "REST"]
@@ -50,7 +50,7 @@
       "salaryRange":[40,80],
       "totalBudget":240,
       "totalSeats":3,
-      "division":"IB-EQUITY",
+      "division":"RISK",
       "post":"ED",
       "skillsRequired": ["Java", "Spring-MVC", "REST"]
     }

@@ -24,7 +24,7 @@
                           <i class="material-icons">store</i>
                       </div>
                       <h6  class="card-category">Total Budget Exausted</h6>
-                      <h3 class="card-title">{{budgetExhausted}}L/{{totalBudget}}L</h3>
+                      <h3 class="card-title">{{budgetExhausted.toFixed(2)}}L/{{totalBudget}}L</h3>
                   </div>
                   <div class="card-footer">
                     
@@ -38,7 +38,7 @@
                           <i class="material-icons">thumb_up</i>
                       </div>
                       <h6  class="card-category">Total Savings</h6>
-                      <h3 class="card-title">{{totalSavings}}L</h3>
+                      <h3 class="card-title">{{totalSavings.toFixed(2)}}L</h3>
                   </div>
                   <div class="card-footer">
                       
@@ -67,7 +67,7 @@
                       <div class="ct-chart" id="dailySalesChart"></div>
                   </div>
                   <div class="card-body">
-                      <h4 class="card-title">Seats Filled by Team</h4>
+                      <h4 class="card-title">Seats Filled vs Total by Team</h4>
                   </div>
                   <div class="card-footer">
                       <div class="stats">
@@ -84,7 +84,7 @@
                       <div class="ct-chart ct-chart-bar" id="budgetByTeam"></div>
                   </div>
                   <div class="card-body">
-                      <h4 class="card-title">Budget exhausted per team</h4>
+                      <h4 class="card-title">Budget exhausted vs Total budget per team</h4>
                   </div>
                   <div class="card-footer">
                       <div class="stats">

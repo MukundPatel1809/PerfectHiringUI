@@ -109,7 +109,7 @@ export class DashboardComponent implements OnInit {
         console.log('series ' + series);
         console.log('totalSeats ' + totalSeatsByJob);
 
-        this.drawBar('#dailySalesChart', labels, [series, totalSeatsByJob], 0, this.candidateService.candidates.length / (this.jobs.length - 2));
+        this.drawBar('#dailySalesChart', labels, [series, totalSeatsByJob], 0, 10);
 
 
     }
@@ -133,7 +133,7 @@ export class DashboardComponent implements OnInit {
         console.log('series ' + series);
         console.log('totalSeats ' + totalBudgetByJob);
 
-        this.drawBar('#budgetByTeam', labels, [series, totalBudgetByJob], 0, 100);
+        this.drawBar('#budgetByTeam', labels, [series, totalBudgetByJob], 0, 300);
 
 
     }
@@ -148,12 +148,16 @@ export class DashboardComponent implements OnInit {
             axisX: {
                 showGrid: true,
                 labelOffset: {
-                    x: 80,
+                    x: 40,
                     y: 0
                 }
             },
             axisY: {
-                showGrid: true
+                showGrid: true,
+                labelOffset: {
+                    x: 0,
+                    y: 12
+                }
 
             },
             low: low,
@@ -163,7 +167,7 @@ export class DashboardComponent implements OnInit {
 
         var responsiveOptions: any[] = [
             ['screen and (max-width: 880px)', {
-                seriesBarDistance: 30,
+                seriesBarDistance: 10,
             }]
         ];
 

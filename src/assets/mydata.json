@@ -35,22 +35,6 @@
       "YearsAtCompany": 6
     },
     {
-      "name":"Rani Singh",
-      "Age": 24,
-      "Joining": "No",
-      "Department": "WMA",
-      "DistanceFromHome": 1,
-      "Gender": "Female",
-      "JobLevel": "EE",
-      "MaritalStatus": "Single",
-      "NumCompaniesWorked": 1,
-      "PercentSalaryHike": 15,
-      "TotalWorkingYears": 3,
-      "CurrentSalary": 8,
-      "jobId": "43552435",
-      "YearsAtCompany": 3
-    },
-    {
       "name":"Sanika Sinalkar",
       "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 25,
@@ -68,40 +52,6 @@
       "YearsAtCompany": 4
     },
     {
-      "name":"Sachin Kumar",
-      "skillsRequired" : ["Java","Python","Spring","REST"],
-      "Age": 27,
-      "Joining": "Yes",
-      "Department": "IBIT",
-      "DistanceFromHome": 2,
-      "Gender": "Male",
-      "JobLevel": "EE",
-      "MaritalStatus": "Married",
-      "NumCompaniesWorked": 4,
-      "PercentSalaryHike": 22,
-      "TotalWorkingYears": 6,
-      "CurrentSalary": 15,
-      "jobId": "43552435",
-      "YearsAtCompany": 2
-    },
-    {
-      "name":"Taran Arun",
-      "skillsRequired" : ["Java","Python","Spring","REST"],
-      "Age": 24,
-      "Joining": "Yes",
-      "Department": "IBIT",
-      "DistanceFromHome": 1,
-      "Gender": "Male",
-      "JobLevel": "EE",
-      "MaritalStatus": "Single",
-      "NumCompaniesWorked": 1,
-      "PercentSalaryHike": 20,
-      "TotalWorkingYears": 3,
-      "CurrentSalary": 7,
-      "jobId": "43552435",
-      "YearsAtCompany": 3
-    },
-    {
       "name":"RP Singh",
       "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 23,
@@ -115,7 +65,7 @@
       "PercentSalaryHike": 14,
       "TotalWorkingYears": 2,
       "CurrentSalary": 5,
-      "jobId": "43552435",
+      "jobId": "435524351",
       "YearsAtCompany": 1
     },
     {
@@ -132,7 +82,7 @@
       "PercentSalaryHike": 14,
       "TotalWorkingYears": 3,
       "CurrentSalary": 9,
-      "jobId": "43552435",
+      "jobId": "435524351",
       "YearsAtCompany": 3
     },
     {
@@ -183,7 +133,7 @@
       "PercentSalaryHike": 18,
       "TotalWorkingYears": 3,
       "CurrentSalary": 10,
-      "jobId": "43552435",
+      "jobId": "435524351",
       "YearsAtCompany": 2
     },
     {
@@ -233,7 +183,7 @@
       "PercentSalaryHike": 18,
       "TotalWorkingYears": 1,
       "CurrentSalary": 5,
-      "jobId": "43552435",
+      "jobId": "435524351",
       "YearsAtCompany": 1
     },
     {
@@ -334,7 +284,7 @@
       "PercentSalaryHike": 20,
       "TotalWorkingYears": 2,
       "CurrentSalary": 8,
-      "jobId": "43552435",
+      "jobId": "435524351",
       "YearsAtCompany": 1
     },
     {
@@ -368,7 +318,7 @@
       "PercentSalaryHike": 13,
       "TotalWorkingYears": 4,
       "CurrentSalary": 12,
-      "jobId": "43552435",
+      "jobId": "435524351",
       "YearsAtCompany": 1
     },
     {
