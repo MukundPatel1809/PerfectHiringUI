@@ -9,22 +9,23 @@ import {Candidate} from './candidate';
 export class CandidateService {
 
 
-    public url: String = "";
+    public url: String = '';
 
     public CandidateObj = {
-        Age:0,
-        Department:0,
-        DistanceFromHome:"",
-        Gender:"",
-        JobLevel:"",
-        MaritalStatus:"",
-        NumCompaniesWorked:0,
-        PercentSalaryHike:0,
-        TotalWorkingYears:0,
-        YearsAtCompany:0
+        Age: 0,
+        Department: 0,
+        DistanceFromHome: '',
+        Gender: '',
+        JobLevel: '',
+        MaritalStatus: '',
+        NumCompaniesWorked: 0,
+        PercentSalaryHike: 0,
+        TotalWorkingYears: 0,
+        YearsAtCompany: 0
     };
 
     public candidates: Candidate[] = [];
+
     constructor(private http: HttpClient) {
         this.getJSON().subscribe(data => {
             this.candidates = data.candidates;
@@ -41,9 +42,9 @@ export class CandidateService {
 
     public getSalary(candidate: Candidate) {
 
-   //    const salary:any =  candidate.CurrentSalary + parseInt((candidate.PercentSalaryHike / 100).toFixed()) * candidate.CurrentSalary;
-        //console.log('salary'+salary);
-        return 0;
+        let salary =  candidate.CurrentSalary + candidate.PercentSalaryHike * candidate.CurrentSalary * 0.01;
+        //console.log(`current: ${candidate.CurrentSalary} hike: ${candidate.PercentSalaryHike} salary: ${salary}`);
+        return salary;
 
     }
 
@@ -55,23 +56,23 @@ export class CandidateService {
 
     public getAPIJSON(candidate: Candidate): any {
         let candidateJSON = {
-            Age:candidate.Age,
-            Department:candidate.Department,
-            DistanceFromHome:candidate.DistanceFromHome,
-            Gender:candidate.Gender,
-            JobLevel:candidate.JobLevel,
-            MaritalStatus:candidate.MaritalStatus,
-            NumCompaniesWorked:candidate.NumCompaniesWorked,
-            PercentSalaryHike:candidate.PercentSalaryHike,
-            TotalWorkingYears:candidate.TotalWorkingYears,
-            YearsAtCompany:candidate.YearsAtCompany
+            Age: candidate.Age,
+            Department: candidate.Department,
+            DistanceFromHome: candidate.DistanceFromHome,
+            Gender: candidate.Gender,
+            JobLevel: candidate.JobLevel,
+            MaritalStatus: candidate.MaritalStatus,
+            NumCompaniesWorked: candidate.NumCompaniesWorked,
+            PercentSalaryHike: candidate.PercentSalaryHike,
+            TotalWorkingYears: candidate.TotalWorkingYears,
+            YearsAtCompany: candidate.YearsAtCompany
         };
         return candidateJSON;
     }
 
     public findProfileMatchingPercentage(array1: String[], array2: String[]): number {
         let intersectionArray = array1.filter(value => array2.includes(value));
-        let percentageProfileMatched: any = ( intersectionArray.length / array1.length ) * 100;
+        let percentageProfileMatched: any = (intersectionArray.length / array1.length) * 100;
         return percentageProfileMatched.toFixed(2);
     }
 }
