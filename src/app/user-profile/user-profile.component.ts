@@ -47,20 +47,25 @@ export class UserProfileComponent implements OnInit {
     let age = this.myForm.controls.Age.value;
 
 
-    let Department= this.myForm.controls.Department.value;
-    let Attritus = this.myForm.controls.Attritus.value;
-    let Gender = this.myForm.controls.Gender.value;
-    let Age = this.myForm.controls.Gender.value;
-    let DistanceFromHome = this.myForm.controls.DistanceFromHome.value;
-    let MaritalStatus = this.myForm.controls.MaritalStatus.value;
-    let PercentSalaryHike = this.myForm.controls.PercentSalaryHike.value;
-    let CurrentSalary = this.myForm.controls.CurrentSalary.value;
-    let JobLevel = this.myForm.controls.JobLevel.value;
-    let TotalWorkingYears = this.myForm.controls.Gender.value;
-    let NumCompaniesWorked = this.myForm.controls.NumCompaniesWorked.value;
-    let YearsAtCompany = this.myForm.controls.Gender.value;
-    //let candidate = new Candidate(name, age, Attritus, DistanceFromHome, Department, Gender, JobLevel, MaritalStatus, NumCompaniesWorked, PercentSalaryHike, TotalWorkingYears, YearsAtCompany, CurrentSalary, percentMatching);
-    //var isJoining = this.candidateService.updateCandidate(candidate);
+    let Department: String= this.myForm.controls.Department.value;
+    let Attritus: String = this.myForm.controls.Attritus.value;
+    let Gender: String = this.myForm.controls.Gender.value;
+    let Age: number = this.myForm.controls.Gender.value;
+    let DistanceFromHome: number = this.myForm.controls.DistanceFromHome.value;
+    let MaritalStatus: String = this.myForm.controls.MaritalStatus.value;
+    let PercentSalaryHike: number = this.myForm.controls.PercentSalaryHike.value;
+    let CurrentSalary: number = this.myForm.controls.CurrentSalary.value;
+    let JobLevel: String = this.myForm.controls.JobLevel.value;
+    let TotalWorkingYears: number = this.myForm.controls.Gender.value;
+    let NumCompaniesWorked: number = this.myForm.controls.NumCompaniesWorked.value;
+    let YearsAtCompany: number = this.myForm.controls.Gender.value;
+    let candidateTemp = new Candidate(name, age, Attritus, Department, DistanceFromHome, Gender, JobLevel, MaritalStatus, NumCompaniesWorked, PercentSalaryHike, TotalWorkingYears, YearsAtCompany, CurrentSalary, 10, "10");
+    var isJoining = this.candidateService.updateCandidate(candidateTemp).subscribe( data => {
+      return candidateTemp.willCandidateJoin = data.result == "1" ? "Yes" : "No";
+    });
+
+    //this.myForm.c
+    this.myForm.reset();
   }
 
   findProfileMatchingPercentage(array1: String[], array2: String[]): number {
