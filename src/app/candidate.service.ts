@@ -42,8 +42,8 @@ export class CandidateService {
     }
 
     public getSalary(candidate: Candidate) {
-        const salary:any =  candidate.CurrentSalary + parseInt((candidate.PercentSalaryHike * candidate.CurrentSalary/100));
-        console.log(`current: ${candidate.CurrentSalary} hike: ${candidate.PercentSalaryHike} salary: ${salary}`);
+        let salary  =  (candidate.CurrentSalary + candidate.PercentSalaryHike * candidate.CurrentSalary * 0.01);
+        //console.log(`current: ${candidate.CurrentSalary} hike: ${candidate.PercentSalaryHike} salary: ${salary}`);
         return salary;
     }
 

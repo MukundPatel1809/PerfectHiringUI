@@ -9,7 +9,7 @@ export class Candidate {
                 public JobLevel: String,
                 public MaritalStatus: String,
                 public NumCompaniesWorked: number,
-                public PercentSalaryHike: Number,
+                public PercentSalaryHike: number,
                 public TotalWorkingYears: number,
                 public YearsAtCompany: number,
                 public CurrentSalary: number,
