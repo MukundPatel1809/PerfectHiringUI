@@ -15,6 +15,7 @@ export class Candidate {
                 public CurrentSalary: number,
                 public ProfileMatching: number,
                 public jobId: String,
+                public ExpectedHike: number,
                 public skillsRequired?: String[],
                 public Joining?: String
                 ) {

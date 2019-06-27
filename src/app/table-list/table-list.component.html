@@ -19,18 +19,20 @@
                                       Name
                                   </th>
                                   <th>
-                                    Salary Hike (%)
-                                </th>
-                                  <th>
-                                      Expected Salary 
-                                  </th>
-                                  <th>
                                       Profile Matching (%)
                                   </th>
+                                  <th>
+                                      Will Join?
+                                  </th>
+                                  <th>
+                                    Salary Hike (%)
+                                </th>
+
 
                                   <th>
-                                      Will Join? 
+                                      Candidate Expected Hike
                                   </th>
+
 
                               </tr>
                               <tbody>
@@ -42,6 +44,16 @@
                                       <td>
                                           {{candidate.name}}
                                       </td>
+                                      <td>
+                                          {{candidate.ProfileMatching}}
+                                      </td>
+                                      <td>
+                                          {{candidate.Joining}}
+                                      </td>
+
+                                      <td>
+                                          {{candidate.ExpectedHike}}
+                                      </td>
 
                                       <td (click)="editValue(i)">
                                           <span *ngIf="candidate.isEditClicked">
@@ -51,15 +63,10 @@
                                             {{candidate.PercentSalaryHike}}
                                           </span>
                                       </td>
-                                      <td>
-                                        {{candidate.CurrentSalary}}
-                                      </td>
-                                      <td>
-                                          {{candidate.ProfileMatching}}
-                                      </td>
-                                      <td>
-                                        {{candidate.Joining}}
-                                    </td>
+
+
+
+
                                   </tr>
                                   
                               </tbody>

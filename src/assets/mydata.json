@@ -13,9 +13,10 @@
       "NumCompaniesWorked": 5,
       "PercentSalaryHike": 18,
       "TotalWorkingYears": 9,
-      "CurrentSalary": 25,
       "jobId": "43552437",
-      "YearsAtCompany": 2
+      "YearsAtCompany": 2,
+      "CurrentSalary": 25,
+      "ExpectedHike":13
     },
     {
       "name":"Sourav Sen",
@@ -30,9 +31,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 17,
       "TotalWorkingYears": 6,
-      "CurrentSalary": 12,
       "jobId": "43552436",
-      "YearsAtCompany": 6
+      "YearsAtCompany": 6,
+      "CurrentSalary": 12,
+      "ExpectedHike":13
     },
     {
       "name":"Sanika Sinalkar",
@@ -47,9 +49,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 23,
       "TotalWorkingYears": 4,
-      "CurrentSalary": 10,
       "jobId": "43552435",
-      "YearsAtCompany": 4
+      "YearsAtCompany": 4,
+      "CurrentSalary": 10,
+      "ExpectedHike":13
     },
     {
       "name":"RP Singh",
@@ -64,9 +67,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 14,
       "TotalWorkingYears": 2,
-      "CurrentSalary": 5,
       "jobId": "435524351",
-      "YearsAtCompany": 1
+      "YearsAtCompany": 1,
+      "CurrentSalary": 5,
+      "ExpectedHike":13
     },
     {
       "name":"Krishna J",
@@ -81,9 +85,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 14,
       "TotalWorkingYears": 3,
-      "CurrentSalary": 9,
       "jobId": "435524351",
-      "YearsAtCompany": 3
+      "YearsAtCompany": 3,
+      "CurrentSalary": 9,
+      "ExpectedHike":13
     },
     {
       "name":"Khalil Ahmed",
@@ -98,9 +103,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 24,
       "TotalWorkingYears": 9,
-      "CurrentSalary": 24,
       "jobId": "43552437",
-      "YearsAtCompany": 9
+      "YearsAtCompany": 9,
+      "CurrentSalary": 24,
+      "ExpectedHike":13
     },
     {
       "name":"Arun P",
@@ -115,9 +121,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 12,
       "TotalWorkingYears": 6,
-      "CurrentSalary": 15,
       "jobId": "43552436",
-      "YearsAtCompany": 6
+      "YearsAtCompany": 6,
+      "CurrentSalary": 15,
+      "ExpectedHike":13
     },
     {
       "name":"Karan T",
@@ -132,9 +139,10 @@
       "NumCompaniesWorked": 2,
       "PercentSalaryHike": 18,
       "TotalWorkingYears": 3,
-      "CurrentSalary": 10,
       "jobId": "435524351",
-      "YearsAtCompany": 2
+      "YearsAtCompany": 2,
+      "CurrentSalary": 10,
+      "ExpectedHike":13
     },
     {
       "name":"Shekhar Sharma",
@@ -149,9 +157,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 20,
       "TotalWorkingYears": 6,
-      "CurrentSalary": 14,
       "jobId": "43552436",
-      "YearsAtCompany": 6
+      "YearsAtCompany": 6,
+      "CurrentSalary": 14,
+      "ExpectedHike":13
     },
     {
       "name":"RJ Kumar",
@@ -166,9 +175,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 11,
       "TotalWorkingYears": 4,
-      "CurrentSalary": 12,
       "jobId": "43552435",
-      "YearsAtCompany": 4
+      "YearsAtCompany": 4,
+      "CurrentSalary": 12,
+      "ExpectedHike":13
     },
     {
       "name":"Kumar JH",
@@ -182,9 +192,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 18,
       "TotalWorkingYears": 1,
-      "CurrentSalary": 5,
       "jobId": "435524351",
-      "YearsAtCompany": 1
+      "YearsAtCompany": 1,
+      "CurrentSalary": 5,
+      "ExpectedHike":13
     },
     {
       "name":"Vibhu A",
@@ -199,9 +210,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 16,
       "TotalWorkingYears": 3,
-      "CurrentSalary": 13,
       "jobId": "43552435",
-      "YearsAtCompany": 3
+      "YearsAtCompany": 3,
+      "CurrentSalary": 13,
+      "ExpectedHike":13
     },
     {
       "name":"A RAJA",
@@ -216,9 +228,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 11,
       "TotalWorkingYears": 8,
-      "CurrentSalary": 24,
       "jobId": "43552437",
-      "YearsAtCompany": 8
+      "YearsAtCompany": 8,
+      "CurrentSalary": 24,
+      "ExpectedHike":13
     },
     {
       "name":"Yugandhar K",
@@ -233,9 +246,10 @@
       "NumCompaniesWorked": 2,
       "PercentSalaryHike": 20,
       "TotalWorkingYears": 2,
-      "CurrentSalary": 7,
       "jobId": "43552435",
-      "YearsAtCompany": 1
+      "YearsAtCompany": 1,
+      "CurrentSalary": 7,
+      "ExpectedHike":13
     },
     {
       "name":"Rahul Kanwal",
@@ -250,9 +264,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 16,
       "TotalWorkingYears": 3,
-      "CurrentSalary": 15,
       "jobId": "43552435",
-      "YearsAtCompany": 3
+      "YearsAtCompany": 3,
+      "CurrentSalary": 15,
+      "ExpectedHike":13
     },
     {
       "name":"RK Singh",
@@ -267,9 +282,10 @@
       "NumCompaniesWorked": 3,
       "PercentSalaryHike": 23,
       "TotalWorkingYears": 14,
-      "CurrentSalary": 32,
       "jobId": "43552438",
-      "YearsAtCompany": 10
+      "YearsAtCompany": 10,
+      "CurrentSalary": 32,
+      "ExpectedHike":13
     },
     {
       "name":"Theresa D'Souza",
@@ -283,9 +299,10 @@
       "NumCompaniesWorked": 2,
       "PercentSalaryHike": 20,
       "TotalWorkingYears": 2,
-      "CurrentSalary": 8,
       "jobId": "435524351",
-      "YearsAtCompany": 1
+      "YearsAtCompany": 1,
+      "CurrentSalary": 8,
+      "ExpectedHike":13
     },
     {
       "name":"Ahana Sheikh",
@@ -300,9 +317,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 18,
       "TotalWorkingYears": 6,
-      "CurrentSalary": 16,
       "jobId": "43552436",
-      "YearsAtCompany": 6
+      "YearsAtCompany": 6,
+      "CurrentSalary": 16,
+      "ExpectedHike":13
     },
     {
       "name":"Kiran Singh",
@@ -317,9 +335,10 @@
       "NumCompaniesWorked": 2,
       "PercentSalaryHike": 13,
       "TotalWorkingYears": 4,
-      "CurrentSalary": 12,
       "jobId": "435524351",
-      "YearsAtCompany": 1
+      "YearsAtCompany": 1,
+      "CurrentSalary": 12,
+      "ExpectedHike":13
     },
     {
       "name":"Raghav Raman",
@@ -334,9 +353,10 @@
       "NumCompaniesWorked": 3,
       "PercentSalaryHike": 21,
       "TotalWorkingYears": 9,
-      "CurrentSalary": 14,
       "jobId": "43552437",
-      "YearsAtCompany": 5
+      "YearsAtCompany": 5,
+      "CurrentSalary": 14,
+      "ExpectedHike":13
     },
     {
       "name":"Ridhi Sen",
@@ -351,9 +371,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 20,
       "TotalWorkingYears": 4,
-      "CurrentSalary": 16,
       "jobId": "43552435",
-      "YearsAtCompany": 4
+      "YearsAtCompany": 4,
+      "CurrentSalary": 16,
+      "ExpectedHike":13
     },
     {
       "name":"Nehul Rawal",
@@ -368,9 +389,10 @@
       "NumCompaniesWorked": 2,
       "PercentSalaryHike": 18,
       "TotalWorkingYears": 4,
-      "CurrentSalary": 15,
       "jobId": "43552435",
-      "YearsAtCompany": 1
+      "YearsAtCompany": 1,
+      "CurrentSalary": 15,
+      "ExpectedHike":13
     },
     {
       "name":"Mukesh Sharma",
@@ -385,9 +407,10 @@
       "NumCompaniesWorked": 2,
       "PercentSalaryHike": 11,
       "TotalWorkingYears": 18,
-      "CurrentSalary": 40,
       "jobId": "43552439",
-      "YearsAtCompany": 6
+      "YearsAtCompany": 6,
+      "CurrentSalary": 40,
+      "ExpectedHike":13
     },
     {
       "name":"Girish Sharma",
@@ -402,9 +425,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 13,
       "TotalWorkingYears": 6,
-      "CurrentSalary": 12,
       "jobId": "43552435",
-      "YearsAtCompany": 6
+      "YearsAtCompany": 6,
+      "CurrentSalary": 12,
+      "ExpectedHike":13
     },
     {
       "name":"Ganesh Singh",
@@ -419,9 +443,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 18,
       "TotalWorkingYears": 6,
-      "CurrentSalary": 12,
       "jobId": "43552436",
-      "YearsAtCompany": 6
+      "YearsAtCompany": 6,
+      "CurrentSalary": 12,
+      "ExpectedHike":13
     },
     {
       "name":"Akhilesh Bhargav",
@@ -436,9 +461,10 @@
       "NumCompaniesWorked": 2,
       "PercentSalaryHike": 18,
       "TotalWorkingYears": 9,
-      "CurrentSalary": 15,
       "jobId": "43552437",
-      "YearsAtCompany": 4
+      "YearsAtCompany": 4,
+      "CurrentSalary": 15,
+      "ExpectedHike":13
     },
     {
       "name":"Garima Kumar",
@@ -453,9 +479,10 @@
       "NumCompaniesWorked": 3,
       "PercentSalaryHike": 23,
       "TotalWorkingYears": 14,
-      "CurrentSalary": 6,
       "jobId": "43552438",
-      "YearsAtCompany": 10
+      "YearsAtCompany": 10,
+      "CurrentSalary": 6,
+      "ExpectedHike":13
     },
     {
       "name":"Raman Lambha",
@@ -470,9 +497,10 @@
       "NumCompaniesWorked": 5,
       "PercentSalaryHike": 16,
       "TotalWorkingYears": 14,
-      "CurrentSalary": 14,
       "jobId": "43552438",
-      "YearsAtCompany": 4
+      "YearsAtCompany": 4,
+      "CurrentSalary": 14,
+      "ExpectedHike":13
     },
     {
       "name":"Abhijeet Joshi",
@@ -487,9 +515,10 @@
       "NumCompaniesWorked": 3,
       "PercentSalaryHike": 18,
       "TotalWorkingYears": 14,
-      "CurrentSalary": 30,
       "jobId": "43552438",
-      "YearsAtCompany": 12
+      "YearsAtCompany": 12,
+      "CurrentSalary": 30,
+      "ExpectedHike":13
     },
     {
       "name":"Neha Dixit",
@@ -504,9 +533,10 @@
       "NumCompaniesWorked": 1,
       "PercentSalaryHike": 16,
       "TotalWorkingYears": 14,
-      "CurrentSalary": 35,
       "jobId": "43552438",
-      "YearsAtCompany": 14
+      "YearsAtCompany": 14,
+      "CurrentSalary": 35,
+      "ExpectedHike":13
     },
     {
       "name":"Rajiv Sharma",
@@ -521,9 +551,10 @@
       "NumCompaniesWorked": 6,
       "PercentSalaryHike": 9,
       "TotalWorkingYears": 14,
-      "CurrentSalary": 38,
       "jobId": "43552438",
-      "YearsAtCompany": 2
+      "YearsAtCompany": 2,
+      "CurrentSalary": 38,
+      "ExpectedHike":13
     },
     {
       "name":"Kiran Singh",
@@ -538,9 +569,10 @@
       "NumCompaniesWorked": 3,
       "PercentSalaryHike": 19,
       "TotalWorkingYears": 14,
-      "CurrentSalary": 25,
       "jobId": "43552438",
-      "YearsAtCompany": 9
+      "YearsAtCompany": 9,
+      "CurrentSalary": 25,
+      "ExpectedHike":13
     }
   ]
 }
