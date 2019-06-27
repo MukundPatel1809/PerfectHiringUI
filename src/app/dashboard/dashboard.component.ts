@@ -1,148 +1,235 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as Chartist from 'chartist';
+import {CandidateService} from '../candidate.service';
+import {Candidate} from '../candidate';
+import {Job} from '../job';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
-  startAnimationForLineChart(chart){
-      let seq: any, delays: any, durations: any;
-      seq = 0;
-      delays = 80;
-      durations = 500;
+    totalGreenStatus: number = 0 ;
+    totalCandidates: number = 0;
+    budgetExhausted: number = 0;
+    totalBudget: number = 0;
+    candidates:Candidate[] = [];
+    totalSavings: number=0;
 
-      chart.on('draw', function(data) {
-        if(data.type === 'line' || data.type === 'area') {
-          data.element.animate({
-            d: {
-              begin: 600,
-              dur: 700,
-              from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-              to: data.path.clone().stringify(),
-              easing: Chartist.Svg.Easing.easeOutQuint
+    jobs: Job[] = [];
+
+    constructor(public candidateService: CandidateService) {
+        console.log("something");
+    }
+
+    startAnimationForLineChart(chart) {
+        let seq: any, delays: any, durations: any;
+        seq = 0;
+        delays = 80;
+        durations = 500;
+
+        chart.on('draw', function (data) {
+            if (data.type === 'line' || data.type === 'area') {
+                data.element.animate({
+                    d: {
+                        begin: 600,
+                        dur: 700,
+                        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                        to: data.path.clone().stringify(),
+                        easing: Chartist.Svg.Easing.easeOutQuint
+                    }
+                });
+            } else if (data.type === 'point') {
+                seq++;
+                data.element.animate({
+                    opacity: {
+                        begin: seq * delays,
+                        dur: durations,
+                        from: 0,
+                        to: 1,
+                        easing: 'ease'
+                    }
+                });
+            }else if(data.type === 'bar') {
+                /*data.element.attr({
+                    style: 'stroke-width: 30px'
+                });*/
             }
-          });
-        } else if(data.type === 'point') {
-              seq++;
-              data.element.animate({
-                opacity: {
-                  begin: seq * delays,
-                  dur: durations,
-                  from: 0,
-                  to: 1,
-                  easing: 'ease'
+        });
+
+        seq = 0;
+    };
+
+    startAnimationForBarChart(chart) {
+        let seq2: any, delays2: any, durations2: any;
+
+        seq2 = 0;
+        delays2 = 80;
+        durations2 = 500;
+        chart.on('draw', function (data) {
+            if (data.type === 'bar') {
+                seq2++;
+                data.element.animate({
+                    opacity: {
+                        begin: seq2 * delays2,
+                        dur: durations2,
+                        from: 0,
+                        to: 1,
+                        easing: 'ease'
+                    }
+                });
+            }
+        });
+
+        seq2 = 0;
+    };
+
+    private calculateCandidateStats(candidates: Candidate[]) {
+        console.log(candidates);
+        this.totalCandidates = candidates.length;
+        candidates.forEach(candidate =>{
+            if(candidate.Attrition==="Yes"){
+                this.totalGreenStatus += 1;
+            }
+            this.budgetExhausted += this.candidateService.getSalary(candidate);
+        });
+    }
+
+
+
+    private calculateJobStats(jobs: Job[]) {
+        console.log(jobs);
+        let maxOffer = 0;
+        jobs.forEach(job=>{
+            //console.log(this.totalBudget);
+            this.totalBudget += job.totalBudget;
+        });
+        this.candidates.forEach(candidate=>{
+            let job = jobs.find(job=> job.id==candidate.jobId);
+            //console.log(job);
+            maxOffer = job.salaryRange[1];
+            //console.log('maxOffer:'+maxOffer);
+            this.totalSavings += maxOffer-this.candidateService.getSalary(candidate);
+        })
+    }
+
+    ngOnInit() {
+        this.candidateService.getJSON().subscribe(data => {
+            console.log(data);
+            this.candidates = data.candidates;
+            this.calculateCandidateStats(this.candidates);
+        });
+        this.candidateService.getJOBS().subscribe(data => {
+            console.log(data);
+            this.jobs = data.jobs;
+            this.calculateJobStats(this.jobs);
+            this.calculateJobIdHiringCount();
+        });
+
+
+
+
+
+        /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
+
+
+
+        /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
+
+        let labels = [];
+        let series = [];
+        let totalSeatsByJob = [];
+        this.jobs.forEach(job => {
+            labels.push(job.division);
+            let candidateCount = 0;
+            this.candidates.forEach(candidate=>{
+                if(candidate.JobLevel==job.post && candidate.Attrition=="Yes"){
+                    candidateCount++;
                 }
-              });
-          }
-      });
-
-      seq = 0;
-  };
-  startAnimationForBarChart(chart){
-      let seq2: any, delays2: any, durations2: any;
-
-      seq2 = 0;
-      delays2 = 80;
-      durations2 = 500;
-      chart.on('draw', function(data) {
-        if(data.type === 'bar'){
-            seq2++;
-            data.element.animate({
-              opacity: {
-                begin: seq2 * delays2,
-                dur: durations2,
-                from: 0,
-                to: 1,
-                easing: 'ease'
-              }
             });
-        }
-      });
-
-      seq2 = 0;
-  };
-  ngOnInit() {
-      const dataDailySalesChart: any = {
-          labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-          series: [
-              [12, 17, 7, 17, 23, 18, 38]
-          ]
-      };
-
-     const optionsDailySalesChart: any = {
-          lineSmooth: Chartist.Interpolation.cardinal({
-              tension: 0
-          }),
-          low: 0,
-          high: 50,
-          chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
-      }
-
-      var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-
-      this.startAnimationForLineChart(dailySalesChart);
+            let hiringPercentage = (candidateCount);
+            series.push(hiringPercentage);
+            totalSeatsByJob.push(job.totalSeats);
+        });
+        console.log('labels: '+labels);
+        console.log('series '+series);
+        console.log('totalSeats '+totalSeatsByJob);
 
 
-      /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
+        const datawebsiteViewsChart: any = {
+            labels: labels,
+            series: [series]
+        };
 
-      const dataCompletedTasksChart: any = {
-          labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
-          series: [
-              [230, 750, 450, 300, 280, 240, 200, 190]
-          ]
-      };
+        var optionswebsiteViewsChart = {
+            axisX: {
+                showGrid: false
+            },
+            low: 0,
+            high: 12,
+            chartPadding: {top: 0, right: 5, bottom: 0, left: 0}
+        };
+        var responsiveOptions: any[] = [
+            ['screen and (max-width: 1280px)', {
+                seriesBarDistance: 5,
+                axisX: {
+                    labelInterpolationFnc: function (value) {
+                        return value[0];
+                    }
+                }
+            }]
+        ];
 
-     const optionsCompletedTasksChart: any = {
-          lineSmooth: Chartist.Interpolation.cardinal({
-              tension: 0
-          }),
-          low: 0,
-          high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-          chartPadding: { top: 0, right: 0, bottom: 0, left: 0}
-      }
-
-      var completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
-
-      // start animation for the Completed Tasks Chart - Line Chart
-      this.startAnimationForLineChart(completedTasksChart);
+        //start animation for the Emails Subscription Chart
+        this.startAnimationForBarChart(new Chartist.Bar('#websiteViewsChart', datawebsiteViewsChart, optionswebsiteViewsChart, responsiveOptions));
+    }
 
 
+    private drawBar(id: string, labels:[], series: [[]], low:number, high:number){
+        const dataDailySalesChart: any = {
+            labels: labels,
+            series: series
+        };
 
-      /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
+        const optionsDailySalesChart: any = {
+            stackBars: false,
+            lineSmooth: Chartist.Interpolation.cardinal({
+                tension: 0
+            }),
+            low: low,
+            high: high,
+            chartPadding: {top: 0, right: 0, bottom: 0, left: 0},
+        };
 
-      var datawebsiteViewsChart = {
-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
-        series: [
-          [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
+        var dailySalesChart = new Chartist.Bar(id, dataDailySalesChart, optionsDailySalesChart);
 
-        ]
-      };
-      var optionswebsiteViewsChart = {
-          axisX: {
-              showGrid: false
-          },
-          low: 0,
-          high: 1000,
-          chartPadding: { top: 0, right: 5, bottom: 0, left: 0}
-      };
-      var responsiveOptions: any[] = [
-        ['screen and (max-width: 640px)', {
-          seriesBarDistance: 5,
-          axisX: {
-            labelInterpolationFnc: function (value) {
-              return value[0];
-            }
-          }
-        }]
-      ];
-      var websiteViewsChart = new Chartist.Bar('#websiteViewsChart', datawebsiteViewsChart, optionswebsiteViewsChart, responsiveOptions);
+        this.startAnimationForLineChart(dailySalesChart);
+    }
 
-      //start animation for the Emails Subscription Chart
-      this.startAnimationForBarChart(websiteViewsChart);
-  }
+    private calculateJobIdHiringCount() {
+        let labels = [];
+        let series = [];
+        let totalSeatsByJob = [];
+        this.jobs.forEach(job => {
+            labels.push(job.division);
+            let candidateCount = 0;
+            this.candidates.forEach(candidate=>{
+                if(candidate.JobLevel==job.post && candidate.Attrition=="Yes"){
+                    candidateCount++;
+                }
+            });
+            let hiringPercentage = (candidateCount);
+            series.push(hiringPercentage);
+            totalSeatsByJob.push(job.totalSeats);
+        });
+        console.log('labels: '+labels);
+        console.log('series '+series);
+        console.log('totalSeats '+totalSeatsByJob);
 
+        this.drawBar(dailySalesChart, labels, [series,totalSeatsByJob], 0, this.candidates.length/(this.jobs.length-2));
+
+
+    }
 }

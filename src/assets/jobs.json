@@ -1,0 +1,36 @@
+{
+  "jobs": [
+    {
+      "id":"43552435",
+      "salaryRange":[8,12],
+      "totalBudget":30,
+      "totalSeats":3,
+      "division":"T1",
+      "post":"EE"
+    },
+    {
+      "id":"43552436",
+      "salaryRange":[10,17],
+      "totalBudget":30,
+      "totalSeats":2,
+      "division":"T2",
+      "post":"AO"
+    },
+    {
+      "id":"43552437",
+      "salaryRange":[15,25],
+      "totalBudget":70,
+      "totalSeats":3,
+      "division":"T3",
+      "post":"AD"
+    },
+    {
+      "id":"43552438",
+      "salaryRange":[33,40],
+      "totalBudget":80,
+      "totalSeats":2,
+      "division":"T4",
+      "post":"DI"
+    }
+  ]
+}
