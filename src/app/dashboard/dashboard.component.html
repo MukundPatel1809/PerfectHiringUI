@@ -1,13 +1,13 @@
 <div class="main-content">
   <div class="container-fluid">
       <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="card card-stats">
                   <div class="card-header card-header-warning card-header-icon">
                       <div class="card-icon">
                           <i class="material-icons">content_copy</i>
                       </div>
-                      <p class="card-category">Joining Status</p>
+                      <h6  class="card-category">Joining Status</h6>
                       <h3 style="white-space: nowrap" class="card-title">{{totalGreenStatus}}/{{totalCandidates}}
                           
                       </h3>
@@ -17,13 +17,13 @@
                   </div>
               </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="card card-stats">
                   <div class="card-header card-header-success card-header-icon">
                       <div class="card-icon">
                           <i class="material-icons">store</i>
                       </div>
-                      <p class="card-category">Budget Exausted</p>
+                      <h6  class="card-category">Total Budget Exausted</h6>
                       <h3 class="card-title">{{budgetExhausted}}L/{{totalBudget}}L</h3>
                   </div>
                   <div class="card-footer">
@@ -31,13 +31,13 @@
                   </div>
               </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="card card-stats">
                   <div class="card-header card-header-info card-header-icon">
                       <div class="card-icon">
                           <i class="material-icons">thumb_up</i>
                       </div>
-                      <p class="card-category">Total Savings</p>
+                      <h6  class="card-category">Total Savings</h6>
                       <h3 class="card-title">{{totalSavings}}L</h3>
                   </div>
                   <div class="card-footer">
@@ -45,14 +45,14 @@
                   </div>
               </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="card card-stats">
                   <div class="card-header card-header-danger card-header-icon">
                       <div class="card-icon">
                             <i class="material-icons">info_outline</i>
                       </div>
-                      <p class="card-category">Candidates may not join</p>
-                      <h3 class="card-title">{{totalCandidates-totalGreenStatus}}</h3>
+                      <h6 class="card-category">Candidates may not join</h6>
+                      <h3 class="card-title ">{{totalCandidates-totalGreenStatus}}</h3>
                   </div>
                   <div class="card-footer">
                      
@@ -63,7 +63,7 @@
       <div class="row">
           <div class="col-md-12">
               <div class="card card-chart">
-                  <div class="card-header card-header-success">
+                  <div class="card-header">
                       <div class="ct-chart" id="dailySalesChart"></div>
                   </div>
                   <div class="card-body">
@@ -80,7 +80,7 @@
       <div class="row">
           <div class="col-md-12">
               <div class="card card-chart ">
-                  <div class="card-header card-header-success">
+                  <div class="card-header ">
                       <div class="ct-chart" id="budgetByTeam"></div>
                   </div>
                   <div class="card-body">
