@@ -47,7 +47,7 @@ export class TableListComponent implements OnInit {
     let val = this.candidateService.updateCandidate(candidateJSON).subscribe(data => {
       this.candidateService.candidates[rowNumber].Joining = data.result == 1 ? "Yes":"No";
     }, data =>{
-        alert("Web service call failed!")
+        console.log("Web service call failed!")
     });
     
     this.candidateService.candidates[rowNumber]["joiningPrediction"] = val;

@@ -46,8 +46,6 @@ export class UserProfileComponent implements OnInit {
     let profileMatched = this.candidateService.findProfileMatchingPercentage(skills, skillsRequired);
     let name = this.myForm.controls.Name.value;
     let age = this.myForm.controls.Age.value;
-
-
     let Department: String= this.myForm.controls.Department.value;
     let Attritus: String = this.myForm.controls.Attritus.value;
     let Gender: String = this.myForm.controls.Gender.value;
@@ -65,6 +63,7 @@ export class UserProfileComponent implements OnInit {
     var isJoining = this.candidateService.updateCandidate(candidateTemp).subscribe( data => {
       return candidateTemp.Joining = data.result == "1" ? "Yes" : "No";
     });
+    this.candidateService.candidates.push(candidateTemp);
 
     this.myForm.reset();
   }

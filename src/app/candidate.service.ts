@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Candidate} from './candidate';
+import {Job} from './job';
 
 @Injectable({
     providedIn: 'root'
@@ -29,6 +30,25 @@ export class CandidateService {
     constructor(private http: HttpClient) {
         this.getJSON().subscribe(data => {
             this.candidates = data.candidates;
+            this.getJOBS().subscribe(data => {
+                let jobs: Job[] = data.jobs;
+                console.log("JOBS INITIALLY");
+                console.log(jobs);
+                this.candidates.forEach(candidate => {
+                    const job: Job = jobs.filter(job => {return job.id == candidate.jobId})[0];
+                    if(job) {
+                        console.log(job.salaryRange);
+                        candidate.PercentSalaryHike = job.salaryRange[0];
+                        let val = this.updateCandidate(this.getAPIJSON(candidate)).subscribe(data => {
+                            candidate.Joining = data.result == 1 ? 'Yes' : 'No';
+                        }, data => {
+                            console.log('Web service call failed!');
+                        });
+                    }else{
+                        console.log("NOT MATCHED");
+                    }
+                })
+            })
         });
     }
 
@@ -42,7 +62,7 @@ export class CandidateService {
 
     public getSalary(candidate: Candidate) {
 
-        let salary =  candidate.CurrentSalary + candidate.PercentSalaryHike * candidate.CurrentSalary * 0.01;
+        let salary = candidate.CurrentSalary + candidate.PercentSalaryHike * candidate.CurrentSalary * 0.01;
         //console.log(`current: ${candidate.CurrentSalary} hike: ${candidate.PercentSalaryHike} salary: ${salary}`);
         return salary;
 
