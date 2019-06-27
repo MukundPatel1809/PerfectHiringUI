@@ -63,27 +63,6 @@ export class DashboardComponent implements OnInit {
     };
 
     startAnimationForBarChart(chart) {
-        let seq2: any, delays2: any, durations2: any;
-
-        seq2 = 0;
-        delays2 = 80;
-        durations2 = 500;
-        chart.on('draw', function (data) {
-            if (data.type === 'bar') {
-                seq2++;
-                data.element.animate({
-                    opacity: {
-                        begin: seq2 * delays2,
-                        dur: durations2,
-                        from: 0,
-                        to: 1,
-                        easing: 'ease'
-                    }
-                });
-            }
-        });
-
-        seq2 = 0;
     };
 
     private calculateCandidateStats(candidates: Candidate[]) {
@@ -126,74 +105,68 @@ export class DashboardComponent implements OnInit {
             this.jobs = data.jobs;
             this.calculateJobStats(this.jobs);
             this.calculateJobIdHiringCount();
+            this.calculateBudgetByTeam();
         });
 
+    }
 
 
 
-
-        /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
-
-
-
-        /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
-
-        let labels = [];
-        let series = [];
-        let totalSeatsByJob = [];
+    private calculateJobIdHiringCount() {
+        let labels: string[] = [];
+        let series: number[] = [];
+        let totalSeatsByJob: number[] = [];
         this.jobs.forEach(job => {
             labels.push(job.division);
             let candidateCount = 0;
             this.candidates.forEach(candidate=>{
-                if(candidate.JobLevel==job.post && candidate.Attrition=="Yes"){
+                if(candidate.jobId==job.id && candidate.Attrition=="Yes"){
                     candidateCount++;
                 }
             });
-            let hiringPercentage = (candidateCount);
-            series.push(hiringPercentage);
+            series.push(candidateCount);
             totalSeatsByJob.push(job.totalSeats);
         });
         console.log('labels: '+labels);
         console.log('series '+series);
         console.log('totalSeats '+totalSeatsByJob);
 
+        this.drawBar("#dailySalesChart", labels, [series,totalSeatsByJob], 0, this.candidates.length/(this.jobs.length-2));
 
-        const datawebsiteViewsChart: any = {
-            labels: labels,
-            series: [series]
-        };
 
-        var optionswebsiteViewsChart = {
-            axisX: {
-                showGrid: false
-            },
-            low: 0,
-            high: 12,
-            chartPadding: {top: 0, right: 5, bottom: 0, left: 0}
-        };
-        var responsiveOptions: any[] = [
-            ['screen and (max-width: 1280px)', {
-                seriesBarDistance: 5,
-                axisX: {
-                    labelInterpolationFnc: function (value) {
-                        return value[0];
-                    }
-                }
-            }]
-        ];
-
-        //start animation for the Emails Subscription Chart
-        this.startAnimationForBarChart(new Chartist.Bar('#websiteViewsChart', datawebsiteViewsChart, optionswebsiteViewsChart, responsiveOptions));
     }
 
+    private calculateBudgetByTeam() {
+        let labels: string[] = [];
+        let series: number[] = [];
+        let totalBudgetByJob: number[] = [];
+        this.jobs.forEach(job => {
+            labels.push(job.division);
+            let budgetExhausted = 0;
+            this.candidates.forEach(candidate=>{
+                if(candidate.jobId==job.id && candidate.Attrition=="Yes"){
+                    budgetExhausted = budgetExhausted + this.candidateService.getSalary(candidate);
+                }
+            });
+            series.push(budgetExhausted);
+            totalBudgetByJob.push(job.totalBudget);
+        });
+        console.log('labels: '+labels);
+        console.log('series '+series);
+        console.log('totalSeats '+totalBudgetByJob);
+
+        this.drawBar("#budgetByTeam", labels, [series,totalBudgetByJob], 0, 100);
+
+
+    }
 
     private drawBar(id: string, labels:[], series: [[]], low:number, high:number){
-        const dataDailySalesChart: any = {
+        const chart: any = {
             labels: labels,
             series: series
         };
 
-        const optionsDailySalesChart: any = {
+        const options: any = {
             stackBars: false,
             lineSmooth: Chartist.Interpolation.cardinal({
                 tension: 0
@@ -203,33 +176,19 @@ export class DashboardComponent implements OnInit {
             chartPadding: {top: 0, right: 0, bottom: 0, left: 0},
         };
 
-        var dailySalesChart = new Chartist.Bar(id, dataDailySalesChart, optionsDailySalesChart);
-
-        this.startAnimationForLineChart(dailySalesChart);
-    }
-
-    private calculateJobIdHiringCount() {
-        let labels = [];
-        let series = [];
-        let totalSeatsByJob = [];
-        this.jobs.forEach(job => {
-            labels.push(job.division);
-            let candidateCount = 0;
-            this.candidates.forEach(candidate=>{
-                if(candidate.JobLevel==job.post && candidate.Attrition=="Yes"){
-                    candidateCount++;
+        var responsiveOptions: any[] = [
+            ['screen and (max-width: 880px)', {
+                seriesBarDistance: 30,
+                axisX: {
+                    labelInterpolationFnc: function (value) {
+                        return value[0];
+                    }
                 }
-            });
-            let hiringPercentage = (candidateCount);
-            series.push(hiringPercentage);
-            totalSeatsByJob.push(job.totalSeats);
-        });
-        console.log('labels: '+labels);
-        console.log('series '+series);
-        console.log('totalSeats '+totalSeatsByJob);
+            }]
+        ];
 
-        this.drawBar(dailySalesChart, labels, [series,totalSeatsByJob], 0, this.candidates.length/(this.jobs.length-2));
+        var dailySalesChart = new Chartist.Bar(id, chart, options, responsiveOptions);
 
-
+        this.startAnimationForBarChart(dailySalesChart);
     }
 }

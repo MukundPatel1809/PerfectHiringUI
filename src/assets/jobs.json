@@ -5,7 +5,7 @@
       "salaryRange":[8,12],
       "totalBudget":30,
       "totalSeats":3,
-      "division":"T1",
+      "division":"IB-GED",
       "post":"EE"
     },
     {
@@ -13,7 +13,7 @@
       "salaryRange":[10,17],
       "totalBudget":30,
       "totalSeats":2,
-      "division":"T2",
+      "division":"IB-CASH",
       "post":"AO"
     },
     {
@@ -21,7 +21,7 @@
       "salaryRange":[15,25],
       "totalBudget":70,
       "totalSeats":3,
-      "division":"T3",
+      "division":"IB-RISK",
       "post":"AD"
     },
     {
@@ -29,7 +29,7 @@
       "salaryRange":[33,40],
       "totalBudget":80,
       "totalSeats":2,
-      "division":"T4",
+      "division":"IB-EQUITY",
       "post":"DI"
     }
   ]
