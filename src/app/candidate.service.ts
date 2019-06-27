@@ -69,9 +69,9 @@ export class CandidateService {
     }
 
     public updateCandidate(candidate: any): Observable<any> {
+        const headers = new HttpHeaders().set('Content-Type', 'application/json');
         return this.http.get('./assets/out.json');
-        //return  this.http.post("http://a302-0134-5920.stm.swissbank.com:5000/", candidate);
-//        return  this.http.post("http://a302-0134-5920.stm.swissbank.com:5000/", candidate);
+        // return this.http.post("http://a302-0134-5920.stm.swissbank.com:5000/", candidate, {headers});
     }
 
     public getAPIJSON(candidate: Candidate): any {
