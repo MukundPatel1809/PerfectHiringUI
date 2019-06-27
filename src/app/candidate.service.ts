@@ -11,8 +11,6 @@ export class CandidateService {
 
     public url: String = "";
 
-    public candidates: Candidate[] = [];
-
     public CandidateObj = {
         Age:0,
         Department:0,
@@ -26,7 +24,7 @@ export class CandidateService {
         YearsAtCompany:0
     };
 
-
+    public candidates: Candidate[] = [];
     constructor(private http: HttpClient) {
         this.getJSON().subscribe(data => {
             this.candidates = data.candidates;
@@ -42,14 +40,17 @@ export class CandidateService {
     }
 
     public getSalary(candidate: Candidate) {
-        let salary  =  (candidate.CurrentSalary + candidate.PercentSalaryHike * candidate.CurrentSalary * 0.01);
-        //console.log(`current: ${candidate.CurrentSalary} hike: ${candidate.PercentSalaryHike} salary: ${salary}`);
-        return salary;
+
+   //    const salary:any =  candidate.CurrentSalary + parseInt((candidate.PercentSalaryHike / 100).toFixed()) * candidate.CurrentSalary;
+        //console.log('salary'+salary);
+        return 0;
+
     }
 
     public updateCandidate(candidate: any): Observable<any> {
         return this.http.get('./assets/out.json');
         //return  this.http.post("http://a302-0134-5920.stm.swissbank.com:5000/", candidate);
+//        return  this.http.post("http://a302-0134-5920.stm.swissbank.com:5000/", candidate);
     }
 
     public getAPIJSON(candidate: Candidate): any {
@@ -68,5 +69,9 @@ export class CandidateService {
         return candidateJSON;
     }
 
-
+    public findProfileMatchingPercentage(array1: String[], array2: String[]): number {
+        let intersectionArray = array1.filter(value => array2.includes(value));
+        let percentageProfileMatched: any = ( intersectionArray.length / array1.length ) * 100;
+        return percentageProfileMatched.toFixed(2);
+    }
 }

@@ -1,6 +1,8 @@
 {
   "candidates": [
     {
+      "name":"Shikha Sharma",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 30,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -16,6 +18,8 @@
       "YearsAtCompany": 2
     },
     {
+      "name":"Sourav Sen",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 27,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -31,6 +35,7 @@
       "YearsAtCompany": 6
     },
     {
+      "name":"Rani Singh",
       "Age": 24,
       "Joining": "No",
       "Department": "WMA",
@@ -46,6 +51,8 @@
       "YearsAtCompany": 3
     },
     {
+      "name":"Sanika Sinalkar",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 25,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -61,6 +68,8 @@
       "YearsAtCompany": 4
     },
     {
+      "name":"Sachin Kumar",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 27,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -76,6 +85,8 @@
       "YearsAtCompany": 2
     },
     {
+      "name":"Taran Arun",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 24,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -91,6 +102,8 @@
       "YearsAtCompany": 3
     },
     {
+      "name":"RP Singh",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 23,
       "Joining": "No",
       "Department": "IBIT",
@@ -106,6 +119,8 @@
       "YearsAtCompany": 1
     },
     {
+      "name":"Krishna J",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 24,
       "Joining": "No",
       "Department": "IBIT",
@@ -121,6 +136,8 @@
       "YearsAtCompany": 3
     },
     {
+      "name":"Khalil Ahmed",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 30,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -136,6 +153,8 @@
       "YearsAtCompany": 9
     },
     {
+      "name":"Arun P",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 27,
       "Joining": "No",
       "Department": "IBIT",
@@ -151,6 +170,8 @@
       "YearsAtCompany": 6
     },
     {
+      "name":"Karan T",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 24,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -166,6 +187,8 @@
       "YearsAtCompany": 2
     },
     {
+      "name":"Shekhar Sharma",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 27,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -181,6 +204,8 @@
       "YearsAtCompany": 6
     },
     {
+      "name":"RJ Kumar",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 25,
       "Joining": "No",
       "Department": "WMA",
@@ -196,6 +221,7 @@
       "YearsAtCompany": 4
     },
     {
+      "name":"Kumar JH",
       "Age": 22,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -211,6 +237,8 @@
       "YearsAtCompany": 1
     },
     {
+      "name":"Vibhu A",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 24,
       "Joining": "No",
       "Department": "WMA",
@@ -226,6 +254,8 @@
       "YearsAtCompany": 3
     },
     {
+      "name":"A RAJA",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 29,
       "Joining": "No",
       "Department": "IBIT",
@@ -241,6 +271,8 @@
       "YearsAtCompany": 8
     },
     {
+      "name":"Yugandhar K",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 23,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -256,6 +288,8 @@
       "YearsAtCompany": 1
     },
     {
+      "name":"Rahul Kanwal",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 24,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -271,6 +305,8 @@
       "YearsAtCompany": 3
     },
     {
+      "name":"RK Singh",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 35,
       "Joining": "Yes",
       "Department": "WMA",
@@ -286,6 +322,7 @@
       "YearsAtCompany": 10
     },
     {
+      "name":"Theresa D'Souza",
       "Age": 23,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -301,6 +338,8 @@
       "YearsAtCompany": 1
     },
     {
+      "name":"Ahana Sheikh",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 27,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -316,6 +355,8 @@
       "YearsAtCompany": 6
     },
     {
+      "name":"Kiran Singh",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 25,
       "Joining": "No",
       "Department": "IBIT",
@@ -331,6 +372,8 @@
       "YearsAtCompany": 1
     },
     {
+      "name":"Raghav Raman",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 30,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -346,6 +389,8 @@
       "YearsAtCompany": 5
     },
     {
+      "name":"Ridhi Sen",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 25,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -361,6 +406,8 @@
       "YearsAtCompany": 4
     },
     {
+      "name":"Nehul Rawal",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 25,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -376,6 +423,8 @@
       "YearsAtCompany": 1
     },
     {
+      "name":"Mukesh Sharma",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 39,
       "Joining": "No",
       "Department": "IBIT",
@@ -391,6 +440,8 @@
       "YearsAtCompany": 6
     },
     {
+      "name":"Girish Sharma",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 27,
       "Joining": "No",
       "Department": "IBIT",
@@ -406,6 +457,8 @@
       "YearsAtCompany": 6
     },
     {
+      "name":"Ganesh Singh",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 27,
       "Joining": "Yes",
       "Department": "WMA",
@@ -421,6 +474,8 @@
       "YearsAtCompany": 6
     },
     {
+      "name":"Akhilesh Bhargav",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 30,
       "Joining": "Yes",
       "Department": "WMA",
@@ -436,6 +491,8 @@
       "YearsAtCompany": 4
     },
     {
+      "name":"Garima Kumar",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 35,
       "Joining": "Yes",
       "Department": "WMA",
@@ -451,6 +508,8 @@
       "YearsAtCompany": 10
     },
     {
+      "name":"Raman Lambha",
+      "skillsRequired" : ["Java","JUNIT","Spring","Spring-Security"],
       "Age": 35,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -466,6 +525,8 @@
       "YearsAtCompany": 4
     },
     {
+      "name":"Abhijeet Joshi",
+      "skillsRequired" : ["Java","Informatica","Spring","REST"],
       "Age": 35,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -481,6 +542,8 @@
       "YearsAtCompany": 12
     },
     {
+      "name":"Neha Dixit",
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Age": 35,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -496,6 +559,8 @@
       "YearsAtCompany": 14
     },
     {
+      "name":"Rajiv Sharma",
+      "skillsRequired" : ["Java","ML","CSS","HTML5"],
       "Age": 35,
       "Joining": "No",
       "Department": "WMA",
@@ -511,6 +576,8 @@
       "YearsAtCompany": 2
     },
     {
+      "name":"Kiran Singh",
+      "skillsRequired" : ["Java","Python","CSS","HTML"],
       "Age": 35,
       "Joining": "Yes",
       "Department": "IBIT",

@@ -11,13 +11,12 @@ import { Job } from 'app/job';
   styleUrls: ['./table-list.component.css']
 })
 export class TableListComponent implements OnInit {
-  candidates: Candidate[];
   subscription: Subscription;
   statusText: string;
   jobs: Job[];
 
   constructor(public candidateService: CandidateService) {
-  
+    
   }
   
   ngOnInit() {
@@ -46,7 +45,7 @@ export class TableListComponent implements OnInit {
     let candidate = this.candidateService.candidates[rowNumber];
     let candidateJSON = this.candidateService.getAPIJSON(candidate);
     let val = this.candidateService.updateCandidate(candidateJSON).subscribe(data => {
-      this.candidateService.candidates[rowNumber].willCandidateJoin = data.result == 1 ? "Yes":"No";
+      this.candidateService.candidates[rowNumber].Joining = data.result == 1 ? "Yes":"No";
     }, data =>{
         alert("Web service call failed!")
     });

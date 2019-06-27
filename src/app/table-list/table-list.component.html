@@ -33,8 +33,7 @@
                                   </th>
 
                               </tr>
-                              <tbody *ngIf="candidateService">
-
+                              <tbody>
                                   <tr *ngFor="let candidate of candidateService.candidates; let i = index">
 
                                       <td>
@@ -59,7 +58,7 @@
                                           {{candidate.ProfileMatching}}
                                       </td>
                                       <td>
-                                        {{candidate.willCandidateJoin}}
+                                        {{candidate.Joining}}
                                     </td>
                                   </tr>
                                   

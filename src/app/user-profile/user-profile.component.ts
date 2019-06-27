@@ -26,10 +26,11 @@ export class UserProfileComponent implements OnInit {
      TotalWorkingYears: new FormControl(),
      NumCompaniesWorked: new FormControl(),
      YearsAtCompany: new FormControl(),
-     skillSets: new FormControl()
+     skillSets: new FormControl(),
+     jobId: new FormControl()
    });
 
-  constructor(public candidateService: CandidateService) { 
+  constructor(public candidateService: CandidateService) {
   
   }
 
@@ -39,10 +40,10 @@ export class UserProfileComponent implements OnInit {
 
   onSubmit() {
     console.log(this.myForm);
-    
+    let skillsAssigned = this.myForm.controls.skillSets.value;
     let skills = this.myForm.controls.skillSets.value.split(",");
     let skillsRequired = new Organization().skillsRequired;
-    let percentMatching = this.findProfileMatchingPercentage(skills, skillsRequired);
+    let profileMatched = this.candidateService.findProfileMatchingPercentage(skills, skillsRequired);
     let name = this.myForm.controls.Name.value;
     let age = this.myForm.controls.Age.value;
 
@@ -59,19 +60,12 @@ export class UserProfileComponent implements OnInit {
     let TotalWorkingYears: number = this.myForm.controls.Gender.value;
     let NumCompaniesWorked: number = this.myForm.controls.NumCompaniesWorked.value;
     let YearsAtCompany: number = this.myForm.controls.Gender.value;
-    let candidateTemp = new Candidate(name, age, Attritus, Department, DistanceFromHome, Gender, JobLevel, MaritalStatus, NumCompaniesWorked, PercentSalaryHike, TotalWorkingYears, YearsAtCompany, CurrentSalary, 10, "10");
+    let jobId: String = this.myForm.controls.jobId.value;
+    let candidateTemp = new Candidate(name, age, Attritus, Department, DistanceFromHome, Gender, JobLevel, MaritalStatus, NumCompaniesWorked, PercentSalaryHike, TotalWorkingYears, YearsAtCompany, CurrentSalary, profileMatched, jobId, skillsAssigned);
     var isJoining = this.candidateService.updateCandidate(candidateTemp).subscribe( data => {
-      return candidateTemp.willCandidateJoin = data.result == "1" ? "Yes" : "No";
+      return candidateTemp.Joining = data.result == "1" ? "Yes" : "No";
     });
 
-    //this.myForm.c
     this.myForm.reset();
   }
-
-  findProfileMatchingPercentage(array1: String[], array2: String[]): number {
-    let intersectionArray = array1.filter(value => array2.includes(value));
-    let percentageProfileMatched = ( intersectionArray.length / array1.length ) * 100;
-    return percentageProfileMatched;
-  }
-
 }
