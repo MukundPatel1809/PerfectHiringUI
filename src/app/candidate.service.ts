@@ -38,7 +38,7 @@ export class CandidateService {
                     const job: Job = jobs.filter(job => {return job.id == candidate.jobId})[0];
                     if(job) {
                         console.log(job.salaryRange);
-                        candidate.PercentSalaryHike = job.salaryRange[0];
+                        candidate.PercentSalaryHike = job.startingHike;
                         let val = this.updateCandidate(this.getAPIJSON(candidate)).subscribe(data => {
                             candidate.Joining = data.result == 1 ? 'Yes' : 'No';
                         }, data => {
