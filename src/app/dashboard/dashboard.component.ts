@@ -24,6 +24,17 @@ export class DashboardComponent implements OnInit {
         console.log('something');
     }
 
+    ngOnInit() {
+        this.candidateService.getJOBS().subscribe(data => {
+            console.log(data);
+            this.jobs = data.jobs;
+            this.calculateCandidateStats(this.candidateService.candidates);
+            this.calculateJobStats(this.jobs);
+            this.calculateJobIdHiringCount();
+            this.calculateBudgetByTeam();
+        });
+
+    }
 
     startAnimationForBarChart(chart) {
         let seq2: any, delays2: any, durations2: any;
@@ -68,29 +79,13 @@ export class DashboardComponent implements OnInit {
             //console.log(this.totalBudget);
             this.totalBudget += job.totalBudget;
         });
-        this.candidates.forEach(candidate => {
+        this.candidateService.candidates.forEach(candidate => {
             let job = jobs.find(job => job.id == candidate.jobId);
             //console.log(job);
             maxOffer = job.salaryRange[1];
             //console.log('maxOffer:'+maxOffer);
             this.totalSavings += maxOffer - this.candidateService.getSalary(candidate);
         })
-    }
-
-    ngOnInit() {
-        this.candidateService.getJSON().subscribe(data => {
-            console.log(data);
-            this.candidates = data.candidates;
-            this.calculateCandidateStats(this.candidates);
-        });
-        this.candidateService.getJOBS().subscribe(data => {
-            console.log(data);
-            this.jobs = data.jobs;
-            this.calculateJobStats(this.jobs);
-            this.calculateJobIdHiringCount();
-            this.calculateBudgetByTeam();
-        });
-
     }
 
 
@@ -101,7 +96,7 @@ export class DashboardComponent implements OnInit {
         this.jobs.forEach(job => {
             labels.push(job.division);
             let candidateCount = 0;
-            this.candidates.forEach(candidate => {
+            this.candidateService.candidates.forEach(candidate => {
                 if (candidate.jobId == job.id && candidate.Attrition == 'Yes') {
                     candidateCount++;
                 }
@@ -113,7 +108,7 @@ export class DashboardComponent implements OnInit {
         console.log('series ' + series);
         console.log('totalSeats ' + totalSeatsByJob);
 
-        this.drawBar('#dailySalesChart', labels, [series, totalSeatsByJob], 0, this.candidates.length / (this.jobs.length - 2));
+        this.drawBar('#dailySalesChart', labels, [series, totalSeatsByJob], 0, this.candidateService.candidates.length / (this.jobs.length - 2));
 
 
     }
@@ -125,7 +120,7 @@ export class DashboardComponent implements OnInit {
         this.jobs.forEach(job => {
             labels.push(job.division);
             let budgetExhausted = 0;
-            this.candidates.forEach(candidate => {
+            this.candidateService.candidates.forEach(candidate => {
                 if (candidate.jobId == job.id && candidate.Attrition == 'Yes') {
                     budgetExhausted = budgetExhausted + this.candidateService.getSalary(candidate);
                 }

@@ -11,6 +11,8 @@ export class CandidateService {
 
     public url: String = "";
 
+    public candidates: Candidate[] = [];
+
     public CandidateObj = {
         Age:0,
         Department:0,
@@ -26,7 +28,9 @@ export class CandidateService {
 
 
     constructor(private http: HttpClient) {
-
+        this.getJSON().subscribe(data => {
+            this.candidates = data.candidates;
+        });
     }
 
     public getJSON(): Observable<any> {
@@ -44,7 +48,8 @@ export class CandidateService {
     }
 
     public updateCandidate(candidate: any): Observable<any> {
-        return  this.http.post("http://a302-0134-5920.stm.swissbank.com:5000/", candidate);
+        return this.http.get('./assets/out.json');
+        //return  this.http.post("http://a302-0134-5920.stm.swissbank.com:5000/", candidate);
     }
 
     public getAPIJSON(candidate: Candidate): any {

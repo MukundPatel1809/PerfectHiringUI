@@ -21,39 +21,36 @@ export class TableListComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.candidateService.getJSON().subscribe(data => {
-         this.candidates = data.candidates;
-     });
      this.candidateService.getJOBS().subscribe(data => {
        this.jobs = data.jobs;
     });  
   }
 
   editValue(rowNumber: string) {
-    this.candidates[rowNumber]["isEditClicked"] = true;
+    this.candidateService.candidates[rowNumber]["isEditClicked"] = true;
     console.log("clicked"+ rowNumber);
   }
 
-  submitNewValue(rowNumber: string, value: Number, previousValue: Number= this.candidates[rowNumber].PercentSalaryHike ) {
+  submitNewValue(rowNumber: string, value: Number, previousValue: Number= this.candidateService.candidates[rowNumber].PercentSalaryHike ) {
     if(!value) {
       value=previousValue;
-      delete this.candidates[rowNumber]["isEditClicked"];
+      delete this.candidateService.candidates[rowNumber]["isEditClicked"];
       return;
     }
-    delete this.candidates[rowNumber]["isEditClicked"];
-    this.candidates[rowNumber].PercentSalaryHike=value;
+    delete this.candidateService.candidates[rowNumber]["isEditClicked"];
+    this.candidateService.candidates[rowNumber].PercentSalaryHike=value;
     this.updateCandidate(rowNumber);
   }
 
   updateCandidate = (rowNumber) => {
-    let candidate = this.candidates[rowNumber];
+    let candidate = this.candidateService.candidates[rowNumber];
     let candidateJSON = this.candidateService.getAPIJSON(candidate);
     let val = this.candidateService.updateCandidate(candidateJSON).subscribe(data => {
-      this.candidates[rowNumber].willCandidateJoin = data.result == 1 ? "Yes":"No";
+      this.candidateService.candidates[rowNumber].willCandidateJoin = data.result == 1 ? "Yes":"No";
     }, data =>{
         alert("Web service call failed!")
     });
     
-    this.candidates[rowNumber]["joiningPrediction"] = val;
+    this.candidateService.candidates[rowNumber]["joiningPrediction"] = val;
   }
 }

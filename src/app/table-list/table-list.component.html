@@ -33,8 +33,9 @@
                                   </th>
 
                               </tr>
-                              <tbody>
-                                  <tr *ngFor="let candidate of candidates; let i = index">
+                              <tbody *ngIf="candidateService">
+
+                                  <tr *ngFor="let candidate of candidateService.candidates; let i = index">
 
                                       <td>
                                           {{candidate.jobId}}
