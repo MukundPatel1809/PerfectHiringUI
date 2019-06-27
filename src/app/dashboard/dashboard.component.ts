@@ -11,65 +11,49 @@ import {Job} from '../job';
 })
 export class DashboardComponent implements OnInit {
 
-    totalGreenStatus: number = 0 ;
+    totalGreenStatus: number = 0;
     totalCandidates: number = 0;
     budgetExhausted: number = 0;
     totalBudget: number = 0;
-    candidates:Candidate[] = [];
-    totalSavings: number=0;
+    candidates: Candidate[] = [];
+    totalSavings: number = 0;
 
     jobs: Job[] = [];
 
     constructor(public candidateService: CandidateService) {
-        console.log("something");
+        console.log('something');
     }
 
-    startAnimationForLineChart(chart) {
-        let seq: any, delays: any, durations: any;
-        seq = 0;
-        delays = 80;
-        durations = 500;
 
+    startAnimationForBarChart(chart) {
+        let seq2: any, delays2: any, durations2: any;
+
+        seq2 = 0;
+        delays2 = 80;
+        durations2 = 500;
         chart.on('draw', function (data) {
-            if (data.type === 'line' || data.type === 'area') {
-                data.element.animate({
-                    d: {
-                        begin: 600,
-                        dur: 700,
-                        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-                        to: data.path.clone().stringify(),
-                        easing: Chartist.Svg.Easing.easeOutQuint
-                    }
-                });
-            } else if (data.type === 'point') {
-                seq++;
+            if (data.type === 'bar') {
+                seq2++;
                 data.element.animate({
                     opacity: {
-                        begin: seq * delays,
-                        dur: durations,
+                        begin: seq2 * delays2,
+                        dur: durations2,
                         from: 0,
                         to: 1,
                         easing: 'ease'
                     }
                 });
-            }else if(data.type === 'bar') {
-                /*data.element.attr({
-                    style: 'stroke-width: 30px'
-                });*/
             }
         });
 
-        seq = 0;
-    };
-
-    startAnimationForBarChart(chart) {
+        seq2 = 0;
     };
 
     private calculateCandidateStats(candidates: Candidate[]) {
         console.log(candidates);
         this.totalCandidates = candidates.length;
-        candidates.forEach(candidate =>{
-            if(candidate.Attrition==="Yes"){
+        candidates.forEach(candidate => {
+            if (candidate.Attrition === 'Yes') {
                 this.totalGreenStatus += 1;
             }
             this.budgetExhausted += this.candidateService.getSalary(candidate);
@@ -77,20 +61,19 @@ export class DashboardComponent implements OnInit {
     }
 
 
-
     private calculateJobStats(jobs: Job[]) {
         console.log(jobs);
         let maxOffer = 0;
-        jobs.forEach(job=>{
+        jobs.forEach(job => {
             //console.log(this.totalBudget);
             this.totalBudget += job.totalBudget;
         });
-        this.candidates.forEach(candidate=>{
-            let job = jobs.find(job=> job.id==candidate.jobId);
+        this.candidates.forEach(candidate => {
+            let job = jobs.find(job => job.id == candidate.jobId);
             //console.log(job);
             maxOffer = job.salaryRange[1];
             //console.log('maxOffer:'+maxOffer);
-            this.totalSavings += maxOffer-this.candidateService.getSalary(candidate);
+            this.totalSavings += maxOffer - this.candidateService.getSalary(candidate);
         })
     }
 
@@ -111,7 +94,6 @@ export class DashboardComponent implements OnInit {
     }
 
 
-
     private calculateJobIdHiringCount() {
         let labels: string[] = [];
         let series: number[] = [];
@@ -119,19 +101,19 @@ export class DashboardComponent implements OnInit {
         this.jobs.forEach(job => {
             labels.push(job.division);
             let candidateCount = 0;
-            this.candidates.forEach(candidate=>{
-                if(candidate.jobId==job.id && candidate.Attrition=="Yes"){
+            this.candidates.forEach(candidate => {
+                if (candidate.jobId == job.id && candidate.Attrition == 'Yes') {
                     candidateCount++;
                 }
             });
             series.push(candidateCount);
             totalSeatsByJob.push(job.totalSeats);
         });
-        console.log('labels: '+labels);
-        console.log('series '+series);
-        console.log('totalSeats '+totalSeatsByJob);
+        console.log('labels: ' + labels);
+        console.log('series ' + series);
+        console.log('totalSeats ' + totalSeatsByJob);
 
-        this.drawBar("#dailySalesChart", labels, [series,totalSeatsByJob], 0, this.candidates.length/(this.jobs.length-2));
+        this.drawBar('#dailySalesChart', labels, [series, totalSeatsByJob], 0, this.candidates.length / (this.jobs.length - 2));
 
 
     }
@@ -143,49 +125,52 @@ export class DashboardComponent implements OnInit {
         this.jobs.forEach(job => {
             labels.push(job.division);
             let budgetExhausted = 0;
-            this.candidates.forEach(candidate=>{
-                if(candidate.jobId==job.id && candidate.Attrition=="Yes"){
+            this.candidates.forEach(candidate => {
+                if (candidate.jobId == job.id && candidate.Attrition == 'Yes') {
                     budgetExhausted = budgetExhausted + this.candidateService.getSalary(candidate);
                 }
             });
             series.push(budgetExhausted);
             totalBudgetByJob.push(job.totalBudget);
         });
-        console.log('labels: '+labels);
-        console.log('series '+series);
-        console.log('totalSeats '+totalBudgetByJob);
+        console.log('labels: ' + labels);
+        console.log('series ' + series);
+        console.log('totalSeats ' + totalBudgetByJob);
 
-        this.drawBar("#budgetByTeam", labels, [series,totalBudgetByJob], 0, 100);
+        this.drawBar('#budgetByTeam', labels, [series, totalBudgetByJob], 0, 100);
 
 
     }
 
-    private drawBar(id: string, labels:string[], series:any[], low:any, high:any){
+    private drawBar(id: string, labels: string[], series: any[], low: any, high: any) {
         const chart: any = {
             labels: labels,
             series: series
         };
 
         const options: any = {
-            stackBars: false,
-            lineSmooth: Chartist.Interpolation.cardinal({
-                tension: 0
-            }),
+            axisX: {
+                showGrid: true,
+                labelOffset: {
+                    x: 80,
+                    y: 0
+                }
+            },
+            axisY: {
+                showGrid: true
+
+            },
             low: low,
             high: high,
-            chartPadding: {top: 0, right: 0, bottom: 0, left: 0},
+            chartPadding: {top: 0, right: 5, bottom: 5, left: 0},
         };
 
         var responsiveOptions: any[] = [
             ['screen and (max-width: 880px)', {
                 seriesBarDistance: 30,
-                axisX: {
-                    labelInterpolationFnc: function (value) {
-                        return value[0];
-                    }
-                }
             }]
         ];
+
 
         var dailySalesChart = new Chartist.Bar(id, chart, options, responsiveOptions);
 

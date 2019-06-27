@@ -38,9 +38,9 @@ export class CandidateService {
     }
 
     public getSalary(candidate: Candidate) {
-       // const salary:any =  candidate.CurrentSalary + parseInt((candidate.PercentSalaryHike / 100).toFixed()) * candidate.CurrentSalary;
-        //console.log('salary'+salary);
-        return 0;
+        const salary:any =  candidate.CurrentSalary + parseInt((candidate.PercentSalaryHike * candidate.CurrentSalary/100));
+        console.log(`current: ${candidate.CurrentSalary} hike: ${candidate.PercentSalaryHike} salary: ${salary}`);
+        return salary;
     }
 
     public updateCandidate(candidate: any): Observable<any> {
