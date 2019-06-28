@@ -67,6 +67,11 @@ export class CandidateService {
         return this.http.get('./assets/jobs.json');
     }
 
+    public getAttritions(): Observable<any> {
+        return this.http.get('./assets/attr.json');
+    }
+
+
     public getSalary(candidate: Candidate): number {
 
         let salary = (candidate.CurrentSalary + candidate.PercentSalaryHike * candidate.CurrentSalary * 0.01);
