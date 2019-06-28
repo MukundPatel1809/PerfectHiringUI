@@ -291,6 +291,7 @@
     {
       "name":"Theresa D'Souza",
       "Age": 23,
+      "skillsRequired" : ["Java","Python","Spring","REST"],
       "Joining": "Yes",
       "Department": "IBIT",
       "DistanceFromHome": 1,

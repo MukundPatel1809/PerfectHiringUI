@@ -37,7 +37,7 @@ export class CandidateService {
                 this.candidates.forEach(candidate => {
                     const job: Job = jobs.filter(job => {return job.id == candidate.jobId})[0];
                     if(job) {
-                        //candidate.ProfileMatching = this.findProfileMatchingPercentage(job.skillsRequired, candidate.skillsRequired) || 0;
+                        candidate.ProfileMatching = this.findProfileMatchingPercentage(job.skillsRequired, candidate.skillsRequired) || 0;
                         console.log(job.salaryRange);
                         candidate.PercentSalaryHike = job.startingHike;
                         let val = this.updateCandidate(this.getAPIJSON(candidate)).subscribe(data => {
