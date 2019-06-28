@@ -14,21 +14,18 @@
                           <div class="row">
                               <div class="col-md-5">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput formControlName="Name" placeholder="Name">
+                                    <input matInput formControlName="Name" placeholder="Full Name">
                                   </mat-form-field>
                               </div>
                               <div class="col-md-3">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="department" formControlName="Department" type="email">
-                                  </mat-form-field>
-                              </div>
-                              <div class="col-md-3">
-                                  <mat-form-field class="example-full-width">
-                                      <mat-label>Attritus</mat-label>
-                                      <select matNativeControl formControlName="Attritus">
-                                          <option value="Yes">Yes</option>
-                                          <option value="No">No</option>
-                                        </select>
+                                    <mat-label>Department</mat-label>
+                                    <select matNativeControl formControlName="Gender">
+                                        <option value="IB-Tech">IB-TECH</option>
+                                        <option value="WMA">WMA</option>
+                                        <option value="Operations">Operations</option>
+                                      </select>
+
                                   </mat-form-field>
                               </div>
                           </div>
@@ -36,7 +33,7 @@
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Gender</mat-label>
-                                    <select matNativeControl required formControlName="Gender">
+                                    <select matNativeControl formControlName="Gender">
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                         <option value="other">Other</option>
@@ -46,23 +43,23 @@
                               <div class="col-md-3">
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Age</mat-label>
-                                  <input matInput formControlName="Age" placeholder="Age" type="text">
+                                  <input matInput formControlName="Age" placeholder="Age in years" type="text">
                                 </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-3">
-                                  <mat-label>Distance From Home</mat-label>
                                 <mat-form-field class="example-full-width">
-                                  <input matInput formControlName="DistanceFromHome" placeholder="Distance From Home" type="text">
+                                  <input matInput formControlName="DistanceFromHome" placeholder="Distance From Home (in KM)" type="text">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-6">
                                   <mat-form-field class="example-full-width">
                                       <mat-label>Marital Status</mat-label>
-                                      <select matNativeControl required formControlName="MaritalStatus">
+                                      <select matNativeControl formControlName="MaritalStatus">
                                           <option value="single">Single</option>
                                           <option value="married">Married</option>
+                                          <option value="Divorsed">Divorsed</option>
                                         </select>
                                   </mat-form-field>
                               </div>
@@ -71,12 +68,9 @@
                               <div class="col-md-3">
                                   <mat-form-field class="example-full-width">
                                     <mat-label>Job ID</mat-label>
-                                    <select matNativeControl required formControlName="jobId">
+                                    <select matNativeControl formControlName="jobId">
                                         <option value="43552435">43552435</option>
-                                         <option value="AO">AO</option>
-                                          <option value="AD">AD</option>
-                                          <option value="DI">DI</option>
-                                          <option value="ED">ED</option>
+                                        
                                     </select>
                                     </mat-form-field>
                                 </div>
@@ -98,7 +92,7 @@
                             <div class="col-md-3">
                               <mat-form-field class="example-full-width">
                                 <mat-label>Job Level</mat-label>
-                                <select matNativeControl required formControlName="JobLevel">
+                                <select matNativeControl formControlName="JobLevel">
                                     <option value="EE">EE</option>
                                      <option value="AO">AO</option>
                                       <option value="AD">AD</option>
@@ -106,24 +100,32 @@
                                       <option value="ED">ED</option>
                                 </select>
                                 </mat-form-field>
-                            </div>
+                             </div>
                               <div class="col-md-3">
                                   <mat-form-field class="example-full-width">
                                       <mat-label>Total Experience</mat-label>
-                                    <input matInput formControlName="TotalWorkingYears" placeholder="Comma Separated Skills" type="text">
+                                    <input matInput formControlName="TotalWorkingYears" placeholdeer="Total Years Of Experience (in years)" type="text">
                                   </mat-form-field>
                               </div>
-                                      </div>
+                              <div class="col-md-3">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Expected Hike</mat-label>
+                                  <input matInput formControlName="ExpectedSalary" placeholder="Expected Hike (in %)" type="text">
+                                </mat-form-field>
+                            </div>
+
+                            </div>
                             <div class="row">
                                 <div class="col-md-9">
                                     <mat-form-field class="example-full-width">
                                         <mat-label>Skill Sets</mat-label>
-                                      <input matInput formControlName="skillSets" placeholder="Comma Separated Skills" type="text">
+                                      <input matInput formControlName="skillSets" placeholder="Comma Separated" type="text">
                                     </mat-form-field>
                                   </div>
                             </div>
                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Add Profile</button>
                            <div class="clearfix"></div>
+                        <b>     <span>{{ alertMessage }}</span></b> 
                       </form>
                  </div>
                </div>

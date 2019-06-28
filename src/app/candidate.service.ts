@@ -103,7 +103,9 @@ export class CandidateService {
     }
 
     public findProfileMatchingPercentage(array1: String[], array2: String[]): number {
-        let intersectionArray = array1.filter(value => array2.includes(value));
+        array2 = array2.map(function(x){ return x.toUpperCase() })
+        array1 = array1.map(function(x){ return x.toUpperCase() })
+        let intersectionArray = array1.filter(value => array2.includes(value.trim()));
         let percentageProfileMatched: any = (intersectionArray.length / array1.length) * 100;
         return percentageProfileMatched.toFixed(2) ;
     }

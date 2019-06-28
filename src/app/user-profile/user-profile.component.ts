@@ -13,10 +13,11 @@ import {Job} from '../job';
 })
 export class UserProfileComponent implements OnInit {
 
+    public alertMessage: string;
+
     private myForm = new FormGroup({
         Name: new FormControl(),
         Department: new FormControl(),
-        Attritus: new FormControl(),
         Gender: new FormControl(),
         Age: new FormControl(),
         DistanceFromHome: new FormControl(),
@@ -28,6 +29,7 @@ export class UserProfileComponent implements OnInit {
         NumCompaniesWorked: new FormControl(),
         YearsAtCompany: new FormControl(),
         skillSets: new FormControl(),
+        ExpectedSalary: new FormControl(),
         jobId: new FormControl()
     });
 
@@ -47,7 +49,6 @@ export class UserProfileComponent implements OnInit {
         console.log(this.myForm);
         let skillsAssigned = this.myForm.controls.skillSets.value;
         let skills = this.myForm.controls.skillSets.value.split(',');
-        let skillsRequired = new Organization().skillsRequired;
         const job = this.jobs.filter( job => job.id == "43552435")[0];
         let profileMatched = 0;
         if(job) {
@@ -56,24 +57,27 @@ export class UserProfileComponent implements OnInit {
         let name = this.myForm.controls.Name.value;
         let age = this.myForm.controls.Age.value;
         let Department: String = this.myForm.controls.Department.value;
-        let Attritus: String = this.myForm.controls.Attritus.value;
+    
         let Gender: String = this.myForm.controls.Gender.value;
-        let Age: number = this.myForm.controls.Gender.value;
+        let Age: number = this.myForm.controls.Age.value;
         let DistanceFromHome: number = this.myForm.controls.DistanceFromHome.value;
         let MaritalStatus: String = this.myForm.controls.MaritalStatus.value;
         let PercentSalaryHike: number = this.myForm.controls.PercentSalaryHike.value;
         let CurrentSalary: number = this.myForm.controls.CurrentSalary.value;
         let JobLevel: String = this.myForm.controls.JobLevel.value;
-        let TotalWorkingYears: number = this.myForm.controls.Gender.value;
+        let TotalWorkingYears: number = this.myForm.controls.TotalWorkingYears.value;
         let NumCompaniesWorked: number = this.myForm.controls.NumCompaniesWorked.value;
-        let YearsAtCompany: number = this.myForm.controls.Gender.value;
+        let YearsAtCompany: number = this.myForm.controls.YearsAtCompany.value;
         let jobId: String = this.myForm.controls.jobId.value;
-        let candidateTemp = new Candidate(name, age, Attritus, Department, DistanceFromHome, Gender, JobLevel, MaritalStatus, NumCompaniesWorked, PercentSalaryHike, TotalWorkingYears, YearsAtCompany, CurrentSalary, profileMatched, jobId, skillsAssigned);
+        let ExpectedSalary: number = this.myForm.controls.ExpectedSalary.value;
+        let candidateTemp = new Candidate(name, age, "",Department,DistanceFromHome,Gender,JobLevel,MaritalStatus,NumCompaniesWorked,PercentSalaryHike, TotalWorkingYears, YearsAtCompany, CurrentSalary, profileMatched, jobId, ExpectedSalary, skills );
+        
         var isJoining = this.candidateService.updateCandidate(candidateTemp).subscribe(data => {
             return candidateTemp.Joining = data.result == '1' ? 'Yes' : 'No';
         });
+      //  candidateTemp.Joining = "Yes";
         this.candidateService.candidates.push(candidateTemp);
-
+        this.alertMessage= "Record saved successfully!";
         this.myForm.reset();
     }
 }
