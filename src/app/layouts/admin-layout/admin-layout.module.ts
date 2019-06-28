@@ -6,6 +6,7 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
+import { AttritionComponent } from 'app/attrition/attrition.component';
 
 import {
   MatButtonModule,
@@ -31,7 +32,8 @@ import {
   declarations: [
     DashboardComponent,
     UserProfileComponent,
-    TableListComponent
+    TableListComponent,
+	AttritionComponent
   ]
 })
 

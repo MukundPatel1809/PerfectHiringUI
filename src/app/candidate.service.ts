@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Candidate} from './candidate';
 import {Job} from './job';
+import { Attrition } from './attrition';
 
 @Injectable({
     providedIn: 'root'
@@ -26,6 +27,7 @@ export class CandidateService {
     };
 
     public candidates: Candidate[] = [];
+	public attritions: Attrition[] = [];
 
     constructor(private http: HttpClient) {
         this.getJSON().subscribe(data => {
@@ -51,6 +53,10 @@ export class CandidateService {
                 })
             })
         });
+
+        this.getAttritions().subscribe(data => {
+            this.attritions = data.Attritions;
+        })
     }
 
     public getJSON(): Observable<any> {

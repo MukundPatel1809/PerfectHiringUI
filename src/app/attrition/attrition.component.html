@@ -1,0 +1,45 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                      <h4 class="card-title mt-0">Attrition</h4>
+                      <p class="card-category"></p>
+                  </div>
+                     <div class="card-body">
+                        <div class="table-responsive">
+                             <table class="table" >
+                               <tr>
+                                 <th>GPN</th>
+                                 <th>Age</th>
+                                 <th>Department</th>
+                                 <th>Attrition</th>
+                                 <th>Gender</th>
+                                 <th>Job Role</th>
+                                 <th>Monthly Income</th>
+                                 <th>Total Working Yrs.</th>
+                                 <th>Yrs. at Company</th>
+                                 <th>Yrs in Current Role</th>
+                               </tr>
+                               <tr *ngFor="let attrition of candidateService.attritions">
+                                  <td>{{ attrition.GPN }} </td>
+                                  <td>{{ attrition.Age }}</td>
+                                  <td>{{ attrition.Department }}</td>
+                                  <td>{{ attrition.Attrition }}</td>
+                                  <td>{{ attrition.Gender }}</td>
+                                  <td>{{ attrition.JobRole }}</td>
+                                  <td>{{ attrition.MonthlyIncome }}</td>
+                                  <td>{{ attrition.TotalWorkingYears }}</td>
+                                  <td>{{ attrition.YearsAtCompany }}</td>
+                                  <td>{{ attrition.YearsInCurrentRole }}</td>
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
