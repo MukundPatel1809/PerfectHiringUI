@@ -1,0 +1,9 @@
+{
+  "/proxy/*": {
+    "target": "http://a302-0134-5920.stm.swissbank.com:5000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {"^/proxy" : ""}
+  }
+}

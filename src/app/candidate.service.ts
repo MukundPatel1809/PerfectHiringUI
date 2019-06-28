@@ -37,6 +37,7 @@ export class CandidateService {
                 this.candidates.forEach(candidate => {
                     const job: Job = jobs.filter(job => {return job.id == candidate.jobId})[0];
                     if(job) {
+                        //candidate.ProfileMatching = this.findProfileMatchingPercentage(job.skillsRequired, candidate.skillsRequired) || 0;
                         console.log(job.salaryRange);
                         candidate.PercentSalaryHike = job.startingHike;
                         let val = this.updateCandidate(this.getAPIJSON(candidate)).subscribe(data => {
@@ -70,8 +71,8 @@ export class CandidateService {
 
     public updateCandidate(candidate: any): Observable<any> {
         const headers = new HttpHeaders().set('Content-Type', 'application/json');
-        return this.http.get('./assets/out.json');
-        // return this.http.post("http://a302-0134-5920.stm.swissbank.com:5000/", candidate, {headers});
+        //return this.http.get('/proxy');
+        return this.http.post("/proxy/", candidate, {headers});
     }
 
     public getAPIJSON(candidate: Candidate): any {
@@ -93,6 +94,6 @@ export class CandidateService {
     public findProfileMatchingPercentage(array1: String[], array2: String[]): number {
         let intersectionArray = array1.filter(value => array2.includes(value));
         let percentageProfileMatched: any = (intersectionArray.length / array1.length) * 100;
-        return percentageProfileMatched.toFixed(2);
+        return percentageProfileMatched.toFixed(2) ;
     }
 }

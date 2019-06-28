@@ -182,6 +182,7 @@
     },
     {
       "name":"Kumar JH",
+      "skillsRequired" : ["Java","Python","Spring","Java","Python","Spring","REST"],
       "Age": 22,
       "Joining": "Yes",
       "Department": "IBIT",
@@ -199,7 +200,7 @@
     },
     {
       "name":"Vibhu A",
-      "skillsRequired" : ["Java","Python","Spring","REST"],
+      "skillsRequired" : ["Java","Python","Spring","REST","Java","Python","Spring","REST"],
       "Age": 24,
       "Joining": "No",
       "Department": "WMA",

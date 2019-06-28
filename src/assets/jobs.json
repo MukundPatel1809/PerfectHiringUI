@@ -18,7 +18,7 @@
       "division":"E-LABS",
       "post":"EE",
       "startingHike":"35",
-      "skillsRequired": ["Java", "Spring-MVC", "REST"]
+      "skillsRequired": ["Java", "Spring-MVC", "REST", "Python","HTML"]
     },
     {
       "id":"43552436",
@@ -28,7 +28,7 @@
       "division":"IB-CASH",
       "post":"AO",
       "startingHike":"25",
-      "skillsRequired": ["Java", "Spring-MVC", "REST"]
+      "skillsRequired": ["Java", "Spring-MVC", "REST", "Python","CSS"]
     },
     {
       "id":"43552437",
@@ -38,7 +38,7 @@
       "division":"IB-RISK",
       "post":"AD",
       "startingHike":"25",
-      "skillsRequired": ["Java", "Spring-MVC", "REST"]
+      "skillsRequired": ["Java", "Spring-MVC", "REST", "Python","CSS","HTML"]
     },
     {
       "id":"43552438",
@@ -48,7 +48,7 @@
       "division":"IB-EQUITY",
       "post":"DI",
       "startingHike":"20",
-      "skillsRequired": ["Java", "Spring-MVC", "REST"]
+      "skillsRequired": ["Java", "Spring-MVC", "REST", "Python","CSS","HTML"]
     },
     {
       "id":"43552439",
@@ -58,7 +58,7 @@
       "division":"RISK",
       "post":"ED",
       "startingHike":"20",
-      "skillsRequired": ["Java", "Spring-MVC", "REST"]
+      "skillsRequired": ["Java", "Spring-MVC", "REST","HTML"]
     }
   ]
 }
