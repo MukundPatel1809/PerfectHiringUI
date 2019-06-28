@@ -7,7 +7,7 @@
       "totalSeats":9,
       "division":"IB-GED",
       "post":"EE",
-      "startingHike":"35",
+      "startingHike":"18",
       "skillsRequired": ["Java", "Spring-MVC", "REST"]
     },
     {
@@ -17,7 +17,7 @@
       "totalSeats":6,
       "division":"E-LABS",
       "post":"EE",
-      "startingHike":"35",
+      "startingHike":"17",
       "skillsRequired": ["Java", "Spring-MVC", "REST", "Python","HTML"]
     },
     {
@@ -27,7 +27,7 @@
       "totalSeats":8,
       "division":"IB-CASH",
       "post":"AO",
-      "startingHike":"25",
+      "startingHike":"16",
       "skillsRequired": ["Java", "Spring-MVC", "REST", "Python","CSS"]
     },
     {
@@ -37,7 +37,7 @@
       "totalSeats":5,
       "division":"IB-RISK",
       "post":"AD",
-      "startingHike":"25",
+      "startingHike":"17",
       "skillsRequired": ["Java", "Spring-MVC", "REST", "Python","CSS","HTML"]
     },
     {
@@ -47,7 +47,7 @@
       "totalSeats":2,
       "division":"IB-EQUITY",
       "post":"DI",
-      "startingHike":"20",
+      "startingHike":"15",
       "skillsRequired": ["Java", "Spring-MVC", "REST", "Python","CSS","HTML"]
     },
     {
@@ -57,7 +57,7 @@
       "totalSeats":3,
       "division":"RISK",
       "post":"ED",
-      "startingHike":"20",
+      "startingHike":"15",
       "skillsRequired": ["Java", "Spring-MVC", "REST","HTML"]
     }
   ]
