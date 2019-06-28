@@ -43,8 +43,8 @@
     {
       "id":"43552438",
       "salaryRange":[33,45],
-      "totalBudget":90,
-      "totalSeats":2,
+      "totalBudget":400,
+      "totalSeats":8,
       "division":"IB-EQUITY",
       "post":"DI",
       "startingHike":"15",
