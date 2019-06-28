@@ -20,7 +20,7 @@
                               <div class="col-md-3">
                                   <mat-form-field class="example-full-width">
                                     <mat-label>Department</mat-label>
-                                    <select matNativeControl formControlName="Gender">
+                                    <select matNativeControl formControlName="Department">
                                         <option value="IB-Tech">IB-TECH</option>
                                         <option value="WMA">WMA</option>
                                         <option value="Operations">Operations</option>
@@ -116,12 +116,18 @@
 
                             </div>
                             <div class="row">
-                                <div class="col-md-9">
+                                <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
                                         <mat-label>Skill Sets</mat-label>
                                       <input matInput formControlName="skillSets" placeholder="Comma Separated" type="text">
                                     </mat-form-field>
                                   </div>
+                                <div class="col-md-3">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Number Of Companies</mat-label>
+                                        <input matInput formControlName="NumCompaniesWorked" placeholder="Number Of Companies Worked so far" type="text">
+                                    </mat-form-field>
+                                </div>
                             </div>
                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Add Profile</button>
                            <div class="clearfix"></div>

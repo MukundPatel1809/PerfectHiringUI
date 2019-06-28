@@ -70,7 +70,7 @@ export class UserProfileComponent implements OnInit {
         let YearsAtCompany: number = this.myForm.controls.YearsAtCompany.value;
         let jobId: String = this.myForm.controls.jobId.value;
         let ExpectedSalary: number = this.myForm.controls.ExpectedSalary.value;
-        let candidateTemp = new Candidate(name, age, "",Department,DistanceFromHome,Gender,JobLevel,MaritalStatus,NumCompaniesWorked,PercentSalaryHike, TotalWorkingYears, YearsAtCompany, CurrentSalary, profileMatched, jobId, ExpectedSalary, skills );
+        let candidateTemp = new Candidate(name, Age, "",Department,DistanceFromHome,Gender,JobLevel,MaritalStatus,NumCompaniesWorked,PercentSalaryHike, TotalWorkingYears, YearsAtCompany, CurrentSalary, profileMatched, jobId, ExpectedSalary, skills );
         
         var isJoining = this.candidateService.updateCandidate(this.candidateService.getAPIJSON(candidateTemp)).subscribe(data => {
             return candidateTemp.Joining = data.result == '1' ? 'Yes' : 'No';
